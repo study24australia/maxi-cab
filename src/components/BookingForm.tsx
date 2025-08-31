@@ -161,7 +161,7 @@ const BookingForm: React.FC<BookingFormProps> = ({ onSuccess }) => {
         <div className="border-t border-gray-200 pt-4">
           <div className="text-center mb-3">
             <img 
-              src="/taxi_copy.jpg" 
+              src="/wheel_chair_taxi.jpg" 
               alt="Taxi Card" 
               className="mx-auto h-20 w-auto object-contain rounded-lg shadow-sm"
             />
