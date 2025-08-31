@@ -61,6 +61,30 @@ const Home: React.FC<HomeProps> = ({ onBookNow }) => {
       description: 'Comfortable transportation solutions for larger groups and families.',
       image: '/group.png',
       link: '/services/group-transfer'
+    },
+    {
+      title: 'NDIS Run',
+      description: 'Specialized transportation services for NDIS participants with professional care.',
+      image: '/wheelchair.png',
+      link: '/services/ndis-run'
+    },
+    {
+      title: 'School Run',
+      description: 'Safe and reliable school transportation for children with trusted drivers.',
+      image: '/baby_seat.png',
+      link: '/services/school-run'
+    },
+    {
+      title: 'Parcel Delivery',
+      description: 'Fast and secure parcel delivery services across Melbourne and surrounding areas.',
+      image: '/group.png',
+      link: '/services/parcel-delivery'
+    },
+    {
+      title: 'Furniture Moving',
+      description: 'Professional furniture moving and transportation services with careful handling.',
+      image: '/vip.png',
+      link: '/services/furniture-moving'
     }
   ];
 
