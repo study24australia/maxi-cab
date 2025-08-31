@@ -14,8 +14,8 @@ const FloatingButtons = () => {
         </a>
       </div>
       
-      {/* WhatsApp button on the right */}
-      <div className="fixed bottom-6 right-6 z-40">
+      {/* WhatsApp button on the left */}
+      <div className="fixed bottom-6 left-6 z-40">
         <a 
           href="https://wa.me/61436060000"
           target="_blank"
