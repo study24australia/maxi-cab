@@ -45,6 +45,34 @@ const Services = () => {
       image: '/group.png',
       link: '/services/group-transfer',
       features: ['Large capacity vehicles', 'Group discounts', 'Coordinated service']
+    },
+    {
+      title: 'NDIS Run',
+      description: 'Specialized transportation services for NDIS participants with professional care and understanding.',
+      image: '/wheelchair.png',
+      link: '/services/ndis-run',
+      features: ['NDIS registered provider', 'Trained support drivers', 'Flexible scheduling']
+    },
+    {
+      title: 'School Run',
+      description: 'Safe and reliable school transportation for children with trusted, background-checked drivers.',
+      image: '/baby_seat.png',
+      link: '/services/school-run',
+      features: ['Background-checked drivers', 'Child safety certified', 'Punctual service']
+    },
+    {
+      title: 'Parcel Delivery',
+      description: 'Fast and secure parcel delivery services across Melbourne and surrounding areas.',
+      image: '/group.png',
+      link: '/services/parcel-delivery',
+      features: ['Same-day delivery', 'Secure handling', 'Real-time tracking']
+    },
+    {
+      title: 'Furniture Moving',
+      description: 'Professional furniture moving and transportation services with careful handling.',
+      image: '/vip.png',
+      link: '/services/furniture-moving',
+      features: ['Professional handling', 'Protective wrapping', 'Damage protection']
     }
   ];
 

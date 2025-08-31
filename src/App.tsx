@@ -15,6 +15,10 @@ import WheelchairTaxi from './pages/services/WheelchairTaxi';
 import VIPTransfer from './pages/services/VIPTransfer';
 import MelbourneSightseeing from './pages/services/MelbourneSightseeing';
 import GroupTransfer from './pages/services/GroupTransfer';
+import NDISRun from './pages/services/NDISRun';
+import SchoolRun from './pages/services/SchoolRun';
+import ParcelDelivery from './pages/services/ParcelDelivery';
+import FurnitureMoving from './pages/services/FurnitureMoving';
 
 function App() {
   const [isBookingModalOpen, setIsBookingModalOpen] = useState(false);
@@ -37,6 +41,10 @@ function App() {
             <Route path="/services/vip-transfer" element={<VIPTransfer />} />
             <Route path="/services/melbourne-sightseeing" element={<MelbourneSightseeing />} />
             <Route path="/services/group-transfer" element={<GroupTransfer />} />
+            <Route path="/services/ndis-run" element={<NDISRun />} />
+            <Route path="/services/school-run" element={<SchoolRun />} />
+            <Route path="/services/parcel-delivery" element={<ParcelDelivery />} />
+            <Route path="/services/furniture-moving" element={<FurnitureMoving />} />
             <Route path="/contact" element={<Contact />} />
           </Routes>
         </main>

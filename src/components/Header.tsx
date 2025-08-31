@@ -18,6 +18,10 @@ const Header: React.FC<HeaderProps> = ({ onBookNow }) => {
     { name: 'VIP Transfer', path: '/services/vip-transfer' },
     { name: 'Melbourne Sightseeing', path: '/services/melbourne-sightseeing' },
     { name: 'Group Transfer', path: '/services/group-transfer' },
+    { name: 'NDIS Run', path: '/services/ndis-run' },
+    { name: 'School Run', path: '/services/school-run' },
+    { name: 'Parcel Delivery', path: '/services/parcel-delivery' },
+    { name: 'Furniture Moving', path: '/services/furniture-moving' },
   ];
 
   const isActive = (path: string) => location.pathname === path;
