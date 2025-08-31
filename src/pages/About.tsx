@@ -123,16 +123,35 @@ const About = () => {
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">Service Coverage</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              We provide comprehensive taxi services across Melbourne and surrounding areas, ensuring you can rely on us wherever your journey takes you.
+              We provide comprehensive taxi services all around Melbourne and surrounding areas, ensuring you can rely on us wherever your journey takes you.
             </p>
           </div>
           
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {coverageAreas.map((area, index) => (
-              <div key={index} className="bg-gray-50 text-center py-4 px-6 rounded-lg hover:bg-orange-50 hover:text-orange-600 transition-colors duration-200">
-                <span className="font-medium">{area}</span>
+          <div className="bg-gradient-to-r from-orange-50 to-orange-100 rounded-2xl p-12 text-center">
+            <div className="max-w-4xl mx-auto">
+              <div className="inline-flex items-center justify-center w-20 h-20 bg-orange-500 text-white rounded-full mb-6">
+                <MapPin className="h-10 w-10" />
               </div>
-            ))}
+              <h3 className="text-3xl font-bold text-gray-900 mb-4">All Around Melbourne</h3>
+              <p className="text-lg text-gray-700 mb-6 leading-relaxed">
+                Our comprehensive taxi services cover the entire Melbourne metropolitan area and surrounding regions. 
+                From the bustling city center to the quiet suburbs, from the airport to your doorstep - we're here to serve you.
+              </p>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
+                <div className="bg-white p-6 rounded-xl shadow-md">
+                  <h4 className="font-semibold text-gray-900 mb-2">Inner Melbourne</h4>
+                  <p className="text-gray-600 text-sm">CBD, inner suburbs, and cultural districts</p>
+                </div>
+                <div className="bg-white p-6 rounded-xl shadow-md">
+                  <h4 className="font-semibold text-gray-900 mb-2">Greater Melbourne</h4>
+                  <p className="text-gray-600 text-sm">Outer suburbs and metropolitan areas</p>
+                </div>
+                <div className="bg-white p-6 rounded-xl shadow-md">
+                  <h4 className="font-semibold text-gray-900 mb-2">Airport & Beyond</h4>
+                  <p className="text-gray-600 text-sm">Airport transfers and regional connections</p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
