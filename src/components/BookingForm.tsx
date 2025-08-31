@@ -167,7 +167,7 @@ const BookingForm: React.FC<BookingFormProps> = ({ onSuccess }) => {
             />
           </div>
           <label className="block text-sm font-medium text-gray-700 mb-2">
-            Do you have this card?
+            Do you have wheel chair taxi card?
           </label>
           <div className="flex space-x-4">
             <label className="flex items-center">
