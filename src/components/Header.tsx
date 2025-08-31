@@ -62,25 +62,27 @@ const Header: React.FC<HeaderProps> = ({ onBookNow }) => {
             {/* Services Dropdown */}
             <div 
               className="relative"
-              onMouseEnter={() => setIsServicesOpen(true)}
-              onMouseLeave={() => setIsServicesOpen(false)}
             >
               <button 
                 className={`flex items-center space-x-1 font-medium transition-colors ${
                   location.pathname.startsWith('/services') ? 'text-black' : 'text-gray-800 hover:text-black'
                 }`}
                 onClick={() => setIsServicesOpen(!isServicesOpen)}
+                onMouseEnter={() => setIsServicesOpen(true)}
               >
                 <span>Our Services</span>
                 <ChevronDown className={`h-4 w-4 transition-transform duration-200 ${isServicesOpen ? 'rotate-180' : ''}`} />
               </button>
               
               {isServicesOpen && (
-                <div className="absolute top-full left-0 mt-2 w-72 bg-white rounded-lg shadow-xl border border-gray-200 py-3">
+                <div 
+                  className="absolute top-full left-0 mt-2 w-72 bg-white rounded-lg shadow-xl border border-gray-200 py-3 z-50"
+                  onMouseEnter={() => setIsServicesOpen(true)}
+                  onMouseLeave={() => setIsServicesOpen(false)}
+                >
                   <Link 
                     to="/services" 
-                    className="flex items-center justify-between px-4 py-3 text-gray-800 hover:text-black transition-colors font-medium border-b border-gray-100"
-                    style={{ '&:hover': { backgroundColor: '#fde8e8' } }}
+                    className="flex items-center justify-between px-4 py-3 text-gray-800 hover:text-black hover:bg-orange-50 transition-colors font-medium border-b border-gray-100"
                     onClick={handleServiceClick}
                   >
                     <span>All Services</span>
@@ -90,8 +92,7 @@ const Header: React.FC<HeaderProps> = ({ onBookNow }) => {
                     <Link
                       key={service.path}
                       to={service.path}
-                      className="flex items-center justify-between px-4 py-3 text-gray-700 hover:text-black transition-colors group"
-                      style={{ '&:hover': { backgroundColor: '#fde8e8' } }}
+                      className="flex items-center justify-between px-4 py-3 text-gray-700 hover:text-black hover:bg-orange-50 transition-colors group"
                       onClick={handleServiceClick}
                     >
                       <span>{service.name}</span>
@@ -150,7 +151,7 @@ const Header: React.FC<HeaderProps> = ({ onBookNow }) => {
               {/* Mobile Services Dropdown */}
               <div>
                 <button 
-                  className="flex items-center justify-between px-4 py-3 text-gray-800 hover:bg-orange-50 hover:text-orange-700 transition-colors font-medium border-b border-gray-100"
+                  className="flex items-center justify-between w-full text-left text-gray-800 hover:text-black font-medium transition-colors"
                   onClick={() => setIsServicesOpen(!isServicesOpen)}
                 >
                   <span>Our Services</span>
