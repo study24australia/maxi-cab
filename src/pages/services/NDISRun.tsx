@@ -43,7 +43,7 @@ const NDISRun = () => {
                 Specialized transportation services for NDIS participants with professional care and understanding. We're here to support your independence and community participation.
               </p>
               <button 
-                onClick={onBookNow}
+               
                 className="bg-black text-white px-8 py-4 rounded-lg font-semibold hover:bg-gray-800 transition-colors duration-200">
                 Book NDIS Transport
               </button>
