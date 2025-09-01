@@ -1,78 +1,39 @@
-import React, { useState } from 'react';
-import { User, Phone, MapPin, Calendar, Clock, Car, FileText } from 'lucide-react';
+import React, { useState } from "react";
+import { User, Phone, MapPin, Calendar, Clock, Car, FileText } from "lucide-react";
 
 interface BookingFormProps {
   onSuccess?: () => void;
 }
 
 const BookingForm: React.FC<BookingFormProps> = ({ onSuccess }) => {
-  const [formData, setFormData] = useState({
-    name: '',
-    phone: '',
-    pickupLocation: '',
-    dropoffLocation: '',
-    date: '',
-    time: '',
-    serviceType: '',
-    hasCard: '',
-    notes: ''
-  });
+  const [submitted, setSubmitted] = useState(false);
 
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
-  ) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
-  };
-
-  const encode = (data: Record<string, string>) => {
-    return Object.keys(data)
-      .map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
-      .join('&');
-  };
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-
-    fetch('/', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: encode({ 'form-name': 'booking', ...formData })
-    })
-      .then(() => {
-        alert('✅ Booking request submitted! We will get in touch with you shortly.');
-        if (onSuccess) onSuccess();
-        setFormData({
-          name: '',
-          phone: '',
-          pickupLocation: '',
-          dropoffLocation: '',
-          date: '',
-          time: '',
-          serviceType: '',
-          hasCard: '',
-          notes: ''
-        });
-      })
-      .catch(error => alert('❌ Something went wrong: ' + error));
-  };
+  if (submitted) {
+    return (
+      <div className="bg-white p-8 rounded-2xl shadow-2xl max-w-md w-full text-center">
+        <h3 className="text-2xl font-bold text-gray-900 mb-4">✅ Booking Submitted</h3>
+        <p className="text-gray-700">We will get in touch with you shortly.</p>
+      </div>
+    );
+  }
 
   return (
     <div className="bg-white p-8 rounded-2xl shadow-2xl max-w-md w-full">
       <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">Book Your Ride</h3>
 
-      {/* Netlify form */}
       <form
         name="booking"
         method="POST"
         data-netlify="true"
-        onSubmit={handleSubmit}
+        onSubmit={() => {
+          setSubmitted(true);
+          if (onSuccess) onSuccess();
+        }}
         className="space-y-4"
       >
-        {/* Hidden input for Netlify */}
+        {/* Netlify hidden fields */}
         <input type="hidden" name="form-name" value="booking" />
+        <input type="hidden" name="subject" value="New Booking Request" />
 
         <div className="grid grid-cols-2 gap-4">
           <div>
@@ -83,8 +44,6 @@ const BookingForm: React.FC<BookingFormProps> = ({ onSuccess }) => {
             <input
               type="text"
               name="name"
-              value={formData.name}
-              onChange={handleChange}
               placeholder="Your full name"
               className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
               required
@@ -98,8 +57,6 @@ const BookingForm: React.FC<BookingFormProps> = ({ onSuccess }) => {
             <input
               type="tel"
               name="phone"
-              value={formData.phone}
-              onChange={handleChange}
               placeholder="04XX XXX XXX"
               className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
               required
@@ -116,8 +73,6 @@ const BookingForm: React.FC<BookingFormProps> = ({ onSuccess }) => {
           <input
             type="text"
             name="pickupLocation"
-            value={formData.pickupLocation}
-            onChange={handleChange}
             placeholder="Enter pickup address"
             className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
             required
@@ -133,8 +88,6 @@ const BookingForm: React.FC<BookingFormProps> = ({ onSuccess }) => {
           <input
             type="text"
             name="dropoffLocation"
-            value={formData.dropoffLocation}
-            onChange={handleChange}
             placeholder="Enter destination address"
             className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
             required
@@ -151,8 +104,6 @@ const BookingForm: React.FC<BookingFormProps> = ({ onSuccess }) => {
             <input
               type="date"
               name="date"
-              value={formData.date}
-              onChange={handleChange}
               className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
               required
             />
@@ -165,8 +116,6 @@ const BookingForm: React.FC<BookingFormProps> = ({ onSuccess }) => {
             <input
               type="time"
               name="time"
-              value={formData.time}
-              onChange={handleChange}
               className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
               required
             />
@@ -181,8 +130,6 @@ const BookingForm: React.FC<BookingFormProps> = ({ onSuccess }) => {
           </label>
           <select
             name="serviceType"
-            value={formData.serviceType}
-            onChange={handleChange}
             className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
             required
           >
@@ -197,15 +144,8 @@ const BookingForm: React.FC<BookingFormProps> = ({ onSuccess }) => {
 
         {/* Wheelchair Card */}
         <div className="border-t border-gray-200 pt-4">
-          <div className="text-center mb-3">
-            <img
-              src="/wheel_chair_taxi.jpg"
-              alt="Taxi Card"
-              className="mx-auto h-20 w-auto object-contain rounded-lg shadow-sm"
-            />
-          </div>
           <label className="block text-sm font-medium text-gray-700 mb-2">
-            Do you have wheel chair taxi card?
+            Do you have a wheel chair taxi card?
           </label>
           <div className="flex space-x-4">
             <label className="flex items-center">
@@ -213,8 +153,6 @@ const BookingForm: React.FC<BookingFormProps> = ({ onSuccess }) => {
                 type="radio"
                 name="hasCard"
                 value="yes"
-                checked={formData.hasCard === 'yes'}
-                onChange={handleChange}
                 className="h-4 w-4 text-orange-500 focus:ring-orange-500 border-gray-300"
               />
               <span className="ml-2 text-sm text-gray-700">Yes</span>
@@ -224,8 +162,6 @@ const BookingForm: React.FC<BookingFormProps> = ({ onSuccess }) => {
                 type="radio"
                 name="hasCard"
                 value="no"
-                checked={formData.hasCard === 'no'}
-                onChange={handleChange}
                 className="h-4 w-4 text-orange-500 focus:ring-orange-500 border-gray-300"
               />
               <span className="ml-2 text-sm text-gray-700">No</span>
@@ -241,8 +177,6 @@ const BookingForm: React.FC<BookingFormProps> = ({ onSuccess }) => {
           </label>
           <textarea
             name="notes"
-            value={formData.notes}
-            onChange={handleChange}
             placeholder="Any special requirements or additional information"
             rows={3}
             className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent resize-none"
