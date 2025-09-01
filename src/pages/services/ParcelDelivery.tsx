@@ -48,7 +48,7 @@ const ParcelDelivery = () => {
             </div>
             <div className="relative">
               <img 
-                src="/group.png"
+                src="/parcel.png"
                 alt="Parcel delivery service"
                 className="rounded-2xl shadow-2xl"
               />
