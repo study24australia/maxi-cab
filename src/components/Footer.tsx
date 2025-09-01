@@ -26,9 +26,7 @@ const Footer: React.FC<FooterProps> = ({ onBookNow }) => {
               Professional, reliable, and safe taxi services across Melbourne and nearby areas.
             </p>
             <div className="flex space-x-3">
-              <div className="bg-orange-500 text-white p-2 rounded-full">
-                <Phone className="h-4 w-4" />
-              </div>
+           
               <div className="bg-green-500 text-white p-2 rounded-full">
                 <Phone className="h-4 w-4" />
               </div>
