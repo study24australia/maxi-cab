@@ -1,8 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useState } from 'react';
 import { Camera, MapPin, Clock, ArrowLeft } from 'lucide-react';
+import BookingModal from '../../components/BookingModal';
 
 const MelbourneSightseeing = () => {
+  const [isBookingModalOpen, setIsBookingModalOpen] = useState(false);
+
   const attractions = [
     'Federation Square',
     'Royal Botanic Gardens',
@@ -44,7 +48,10 @@ const MelbourneSightseeing = () => {
               <p className="text-xl leading-relaxed mb-8">
                 Discover Melbourne's best attractions with our guided sightseeing tours. Let us show you the city like a local with insider knowledge and comfort.
               </p>
-              <button className="bg-black text-white px-8 py-4 rounded-lg font-semibold hover:bg-gray-800 transition-colors duration-200">
+              <button 
+                onClick={() => setIsBookingModalOpen(true)}
+                className="bg-black text-white px-8 py-4 rounded-lg font-semibold hover:bg-gray-800 transition-colors duration-200"
+              >
                 Book Sightseeing Tour
               </button>
             </div>
@@ -128,12 +135,12 @@ const MelbourneSightseeing = () => {
           <h2 className="text-4xl font-bold mb-4">Explore Melbourne in Style</h2>
           <p className="text-xl text-gray-300 mb-8">Create unforgettable memories with our personalized sightseeing tours.</p>
           <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
-            <Link 
-              to="/#booking"
+            <button 
+              onClick={() => setIsBookingModalOpen(true)}
               className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 rounded-lg font-semibold transition-colors duration-200"
             >
               Book Tour
-            </Link>
+            </button>
             <Link 
               to="/contact"
               className="border border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-white px-8 py-4 rounded-lg font-semibold transition-colors duration-200"
@@ -143,6 +150,8 @@ const MelbourneSightseeing = () => {
           </div>
         </div>
       </section>
+
+      <BookingModal isOpen={isBookingModalOpen} onClose={() => setIsBookingModalOpen(false)} />
     </div>
   );
 };

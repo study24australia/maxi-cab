@@ -1,8 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useState } from 'react';
 import { Package, Truck, Clock, ArrowLeft, Shield, MapPin } from 'lucide-react';
+import BookingModal from '../../components/BookingModal';
 
 const ParcelDelivery = () => {
+  const [isBookingModalOpen, setIsBookingModalOpen] = useState(false);
+
   const features = [
     'Same-day delivery available',
     'Secure handling and transport',
@@ -42,7 +46,10 @@ const ParcelDelivery = () => {
               <p className="text-xl leading-relaxed mb-8">
                 Fast and secure parcel delivery services across Melbourne and surrounding areas. Your packages handled with care and delivered on time.
               </p>
-              <button className="bg-black text-white px-8 py-4 rounded-lg font-semibold hover:bg-gray-800 transition-colors duration-200">
+              <button 
+                onClick={() => setIsBookingModalOpen(true)}
+                className="bg-black text-white px-8 py-4 rounded-lg font-semibold hover:bg-gray-800 transition-colors duration-200"
+              >
                 Book Delivery
               </button>
             </div>
@@ -127,12 +134,12 @@ const ParcelDelivery = () => {
           <h2 className="text-4xl font-bold mb-4">Fast & Secure Delivery</h2>
           <p className="text-xl text-gray-300 mb-8">Trust us with your important deliveries across Melbourne and beyond.</p>
           <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
-            <Link 
-              to="/#booking"
+            <button 
+              onClick={() => setIsBookingModalOpen(true)}
               className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 rounded-lg font-semibold transition-colors duration-200"
             >
               Book Delivery
-            </Link>
+            </button>
             <Link 
               to="/contact"
               className="border border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-white px-8 py-4 rounded-lg font-semibold transition-colors duration-200"
@@ -142,6 +149,8 @@ const ParcelDelivery = () => {
           </div>
         </div>
       </section>
+
+      <BookingModal isOpen={isBookingModalOpen} onClose={() => setIsBookingModalOpen(false)} />
     </div>
   );
 };

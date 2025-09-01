@@ -1,8 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useState } from 'react';
 import { Home, Truck, Shield, ArrowLeft, Users, Package } from 'lucide-react';
+import BookingModal from '../../components/BookingModal';
 
 const FurnitureMoving = () => {
+  const [isBookingModalOpen, setIsBookingModalOpen] = useState(false);
+
   const features = [
     'Professional furniture handling',
     'Protective wrapping and padding',
@@ -42,7 +46,10 @@ const FurnitureMoving = () => {
               <p className="text-xl leading-relaxed mb-8">
                 Professional furniture moving and transportation services with careful handling. From single items to complete relocations, we've got you covered.
               </p>
-              <button className="bg-black text-white px-8 py-4 rounded-lg font-semibold hover:bg-gray-800 transition-colors duration-200">
+              <button 
+                onClick={() => setIsBookingModalOpen(true)}
+                className="bg-black text-white px-8 py-4 rounded-lg font-semibold hover:bg-gray-800 transition-colors duration-200"
+              >
                 Book Moving Service
               </button>
             </div>
@@ -127,12 +134,12 @@ const FurnitureMoving = () => {
           <h2 className="text-4xl font-bold mb-4">Professional Furniture Moving</h2>
           <p className="text-xl text-gray-300 mb-8">Trust your valuable furniture to our experienced moving professionals.</p>
           <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
-            <Link 
-              to="/#booking"
+            <button 
+              onClick={() => setIsBookingModalOpen(true)}
               className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 rounded-lg font-semibold transition-colors duration-200"
             >
               Book Moving Service
-            </Link>
+            </button>
             <Link 
               to="/contact"
               className="border border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-white px-8 py-4 rounded-lg font-semibold transition-colors duration-200"
@@ -142,6 +149,8 @@ const FurnitureMoving = () => {
           </div>
         </div>
       </section>
+
+      <BookingModal isOpen={isBookingModalOpen} onClose={() => setIsBookingModalOpen(false)} />
     </div>
   );
 };

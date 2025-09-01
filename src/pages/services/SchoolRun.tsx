@@ -1,8 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useState } from 'react';
 import { GraduationCap, Shield, Clock, ArrowLeft, Users, Heart } from 'lucide-react';
+import BookingModal from '../../components/BookingModal';
 
 const SchoolRun = () => {
+  const [isBookingModalOpen, setIsBookingModalOpen] = useState(false);
+
   const features = [
     'Background-checked drivers',
     'Child safety certified vehicles',
@@ -42,7 +46,10 @@ const SchoolRun = () => {
               <p className="text-xl leading-relaxed mb-8">
                 Safe and reliable school transportation for children with trusted, background-checked drivers. Peace of mind for parents, comfort for kids.
               </p>
-              <button className="bg-black text-white px-8 py-4 rounded-lg font-semibold hover:bg-gray-800 transition-colors duration-200">
+              <button 
+                onClick={() => setIsBookingModalOpen(true)}
+                className="bg-black text-white px-8 py-4 rounded-lg font-semibold hover:bg-gray-800 transition-colors duration-200"
+              >
                 Book School Transport
               </button>
             </div>
@@ -127,12 +134,12 @@ const SchoolRun = () => {
           <h2 className="text-4xl font-bold mb-4">Trusted School Transportation</h2>
           <p className="text-xl text-gray-300 mb-8">Safe, reliable, and caring transport service for your children's daily school needs.</p>
           <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
-            <Link 
-              to="/#booking"
+            <button 
+              onClick={() => setIsBookingModalOpen(true)}
               className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 rounded-lg font-semibold transition-colors duration-200"
             >
               Book School Run
-            </Link>
+            </button>
             <Link 
               to="/contact"
               className="border border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-white px-8 py-4 rounded-lg font-semibold transition-colors duration-200"
@@ -142,6 +149,8 @@ const SchoolRun = () => {
           </div>
         </div>
       </section>
+
+      <BookingModal isOpen={isBookingModalOpen} onClose={() => setIsBookingModalOpen(false)} />
     </div>
   );
 };

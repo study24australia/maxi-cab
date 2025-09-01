@@ -1,8 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useState } from 'react';
 import { Accessibility, Heart, Shield, ArrowLeft } from 'lucide-react';
+import BookingModal from '../../components/BookingModal';
 
 const WheelchairTaxi = () => {
+  const [isBookingModalOpen, setIsBookingModalOpen] = useState(false);
+
   const features = [
     'Fully wheelchair accessible vehicles',
     'Trained assistance from our drivers',
@@ -33,7 +37,10 @@ const WheelchairTaxi = () => {
               <p className="text-xl leading-relaxed mb-8">
                 Dignified, safe, and comfortable transportation for passengers with mobility needs. We're committed to providing accessible transportation for everyone.
               </p>
-              <button className="bg-black text-white px-8 py-4 rounded-lg font-semibold hover:bg-gray-800 transition-colors duration-200">
+              <button 
+                onClick={() => setIsBookingModalOpen(true)}
+                className="bg-black text-white px-8 py-4 rounded-lg font-semibold hover:bg-gray-800 transition-colors duration-200"
+              >
                 Book Accessible Taxi
               </button>
             </div>
@@ -104,12 +111,12 @@ const WheelchairTaxi = () => {
           <h2 className="text-4xl font-bold mb-4">Accessible Transportation You Can Trust</h2>
           <p className="text-xl text-gray-300 mb-8">Professional, dignified service for all your mobility needs.</p>
           <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
-            <Link 
-              to="/#booking"
+            <button 
+              onClick={() => setIsBookingModalOpen(true)}
               className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 rounded-lg font-semibold transition-colors duration-200"
             >
               Book Now
-            </Link>
+            </button>
             <Link 
               to="/contact"
               className="border border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-white px-8 py-4 rounded-lg font-semibold transition-colors duration-200"
@@ -119,6 +126,8 @@ const WheelchairTaxi = () => {
           </div>
         </div>
       </section>
+
+      <BookingModal isOpen={isBookingModalOpen} onClose={() => setIsBookingModalOpen(false)} />
     </div>
   );
 };

@@ -1,8 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useState } from 'react';
 import { Calendar, Users, Star, Clock, Shield, ArrowLeft } from 'lucide-react';
+import BookingModal from '../../components/BookingModal';
 
 const EventTransfer = () => {
+  const [isBookingModalOpen, setIsBookingModalOpen] = useState(false);
+
   const features = [
     'Professional and punctual service',
     'Luxury and standard vehicle options',
@@ -42,7 +46,10 @@ const EventTransfer = () => {
               <p className="text-xl leading-relaxed mb-8">
                 Make your special events stress-free with our reliable and stylish transfers. We ensure you arrive in comfort and style.
               </p>
-              <button className="bg-black text-white px-8 py-4 rounded-lg font-semibold hover:bg-gray-800 transition-colors duration-200">
+              <button 
+                onClick={() => setIsBookingModalOpen(true)}
+                className="bg-black text-white px-8 py-4 rounded-lg font-semibold hover:bg-gray-800 transition-colors duration-200"
+              >
                 Book Event Transfer
               </button>
             </div>
@@ -128,12 +135,12 @@ const EventTransfer = () => {
           <h2 className="text-4xl font-bold mb-4">Ready to Book Your Event Transfer?</h2>
           <p className="text-xl text-gray-300 mb-8">Contact us today for a personalized quote and service plan.</p>
           <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
-            <Link 
-              to="/#booking"
+            <button 
+              onClick={() => setIsBookingModalOpen(true)}
               className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 rounded-lg font-semibold transition-colors duration-200"
             >
               Book Now
-            </Link>
+            </button>
             <Link 
               to="/contact"
               className="border border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-white px-8 py-4 rounded-lg font-semibold transition-colors duration-200"
@@ -143,6 +150,8 @@ const EventTransfer = () => {
           </div>
         </div>
       </section>
+
+      <BookingModal isOpen={isBookingModalOpen} onClose={() => setIsBookingModalOpen(false)} />
     </div>
   );
 };
