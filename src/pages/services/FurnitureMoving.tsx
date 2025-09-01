@@ -48,7 +48,7 @@ const FurnitureMoving = () => {
             </div>
             <div className="relative">
               <img 
-                src="/vip.png"
+                src="/furniture.png"
                 alt="Furniture moving service"
                 className="rounded-2xl shadow-2xl"
               />
