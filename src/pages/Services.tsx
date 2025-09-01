@@ -63,14 +63,14 @@ const Services = () => {
     {
       title: 'Parcel Delivery',
       description: 'Fast and secure parcel delivery services across Melbourne and surrounding areas.',
-      image: '/group.png',
+      image: '/parcel.png',
       link: '/services/parcel-delivery',
       features: ['Same-day delivery', 'Secure handling', 'Real-time tracking']
     },
     {
       title: 'Furniture Moving',
       description: 'Professional furniture moving and transportation services with careful handling.',
-      image: '/vip.png',
+      image: '/furniture.png',
       link: '/services/furniture-moving',
       features: ['Professional handling', 'Protective wrapping', 'Damage protection']
     }
