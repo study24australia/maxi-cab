@@ -77,13 +77,13 @@ const Home: React.FC<HomeProps> = ({ onBookNow }) => {
     {
       title: 'Parcel Delivery',
       description: 'Fast and secure parcel delivery services across Melbourne and surrounding areas.',
-      image: '/group.png',
+      image: '/parcel.png',
       link: '/services/parcel-delivery'
     },
     {
       title: 'Furniture Moving',
       description: 'Professional furniture moving and transportation services with careful handling.',
-      image: '/vip.png',
+      image: '/furniture.png',
       link: '/services/furniture-moving'
     }
   ];
