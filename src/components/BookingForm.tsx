@@ -1,5 +1,13 @@
 import React, { useState } from "react";
-import { User, Phone, MapPin, Calendar, Clock, Car, FileText } from "lucide-react";
+import {
+  User,
+  Phone,
+  MapPin,
+  Calendar,
+  Clock,
+  Car,
+  FileText,
+} from "lucide-react";
 
 interface BookingFormProps {
   onSuccess?: () => void;
@@ -11,29 +19,45 @@ const BookingForm: React.FC<BookingFormProps> = ({ onSuccess }) => {
   if (submitted) {
     return (
       <div className="bg-white p-8 rounded-2xl shadow-2xl max-w-md w-full text-center">
-        <h3 className="text-2xl font-bold text-gray-900 mb-4">✅ Booking Submitted</h3>
-        <p className="text-gray-700">We will get in touch with you shortly.</p>
+        <h3 className="text-2xl font-bold text-gray-900 mb-4">
+          ✅ Booking Submitted
+        </h3>
+        <p className="text-gray-700">
+          We will get in touch with you shortly.
+        </p>
       </div>
     );
   }
 
   return (
     <div className="bg-white p-8 rounded-2xl shadow-2xl max-w-md w-full">
-      <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">Book Your Ride</h3>
+      <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">
+        Book Your Ride
+      </h3>
 
       <form
         name="booking"
         method="POST"
         data-netlify="true"
+        data-netlify-honeypot="bot-field" // ✅ honeypot enabled
+        action="/?success=true" // ✅ redirect after submit
+        className="space-y-4"
         onSubmit={() => {
           setSubmitted(true);
           if (onSuccess) onSuccess();
         }}
-        className="space-y-4"
       >
         {/* Netlify hidden fields */}
         <input type="hidden" name="form-name" value="booking" />
         <input type="hidden" name="subject" value="New Booking Request" />
+
+        {/* Honeypot field for spam bots */}
+        <p hidden>
+          <label>
+            Don’t fill this out if you’re human:{" "}
+            <input name="bot-field" />
+          </label>
+        </p>
 
         <div className="grid grid-cols-2 gap-4">
           <div>
