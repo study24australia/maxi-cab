@@ -18,28 +18,62 @@ const BookingForm: React.FC<BookingFormProps> = ({ onSuccess }) => {
     notes: ''
   });
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
+  ) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value
     });
   };
 
-  // const handleSubmit = (e: React.FormEvent) => {
-  //   e.preventDefault();
-  //   // Handle form submission
-  //   console.log('Booking submitted:', formData);
-  //   alert('Booking request submitted! We will contact you shortly.');
-  //   if (onSuccess) {
-  //     onSuccess();
-  //   }
-  // };
+  const encode = (data: Record<string, string>) => {
+    return Object.keys(data)
+      .map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
+      .join('&');
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: encode({ 'form-name': 'booking', ...formData })
+    })
+      .then(() => {
+        alert('✅ Booking request submitted! We will get in touch with you shortly.');
+        if (onSuccess) onSuccess();
+        setFormData({
+          name: '',
+          phone: '',
+          pickupLocation: '',
+          dropoffLocation: '',
+          date: '',
+          time: '',
+          serviceType: '',
+          hasCard: '',
+          notes: ''
+        });
+      })
+      .catch(error => alert('❌ Something went wrong: ' + error));
+  };
 
   return (
     <div className="bg-white p-8 rounded-2xl shadow-2xl max-w-md w-full">
       <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">Book Your Ride</h3>
-      
-      <form className="space-y-4" netlify>
+
+      {/* Netlify form */}
+      <form
+        name="booking"
+        method="POST"
+        data-netlify="true"
+        onSubmit={handleSubmit}
+        className="space-y-4"
+      >
+        {/* Hidden input for Netlify */}
+        <input type="hidden" name="form-name" value="booking" />
+
         <div className="grid grid-cols-2 gap-4">
           <div>
             <label className="flex items-center space-x-2 text-sm font-medium text-gray-700 mb-2">
@@ -73,6 +107,7 @@ const BookingForm: React.FC<BookingFormProps> = ({ onSuccess }) => {
           </div>
         </div>
 
+        {/* Pickup */}
         <div>
           <label className="flex items-center space-x-2 text-sm font-medium text-gray-700 mb-2">
             <MapPin className="h-4 w-4" />
@@ -89,6 +124,7 @@ const BookingForm: React.FC<BookingFormProps> = ({ onSuccess }) => {
           />
         </div>
 
+        {/* Dropoff */}
         <div>
           <label className="flex items-center space-x-2 text-sm font-medium text-gray-700 mb-2">
             <MapPin className="h-4 w-4" />
@@ -105,6 +141,7 @@ const BookingForm: React.FC<BookingFormProps> = ({ onSuccess }) => {
           />
         </div>
 
+        {/* Date + Time */}
         <div className="grid grid-cols-2 gap-4">
           <div>
             <label className="flex items-center space-x-2 text-sm font-medium text-gray-700 mb-2">
@@ -136,6 +173,7 @@ const BookingForm: React.FC<BookingFormProps> = ({ onSuccess }) => {
           </div>
         </div>
 
+        {/* Service Type */}
         <div>
           <label className="flex items-center space-x-2 text-sm font-medium text-gray-700 mb-2">
             <Car className="h-4 w-4" />
@@ -157,12 +195,12 @@ const BookingForm: React.FC<BookingFormProps> = ({ onSuccess }) => {
           </select>
         </div>
 
-        {/* Card Information Section */}
+        {/* Wheelchair Card */}
         <div className="border-t border-gray-200 pt-4">
           <div className="text-center mb-3">
-            <img 
-              src="/wheel_chair_taxi.jpg" 
-              alt="Taxi Card" 
+            <img
+              src="/wheel_chair_taxi.jpg"
+              alt="Taxi Card"
               className="mx-auto h-20 w-auto object-contain rounded-lg shadow-sm"
             />
           </div>
@@ -194,6 +232,8 @@ const BookingForm: React.FC<BookingFormProps> = ({ onSuccess }) => {
             </label>
           </div>
         </div>
+
+        {/* Notes */}
         <div>
           <label className="flex items-center space-x-2 text-sm font-medium text-gray-700 mb-2">
             <FileText className="h-4 w-4" />
