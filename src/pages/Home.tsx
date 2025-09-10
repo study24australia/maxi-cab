@@ -111,14 +111,14 @@ const Home: React.FC<HomeProps> = ({ onBookNow }) => {
               </p>
               <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
                 <a 
-                  href="tel:0436060000"
+                  href="tel:0435223547"
                   className="bg-green-500 hover:bg-green-600 text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 hover:scale-105 flex items-center justify-center space-x-2"
                 >
                   <Phone className="h-5 w-5" />
                   <span>Call Now</span>
                 </a>
                 <a 
-                  href="https://wa.me/61436060000"
+                  href="https://wa.me/61435223547"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 hover:scale-105 flex items-center justify-center space-x-2"
@@ -199,7 +199,7 @@ const Home: React.FC<HomeProps> = ({ onBookNow }) => {
               Book Now
             </button>
             <button className="border border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300">
-              <a href="tel:0436060000" className="block">Call for Quote</a>
+              <a href="tel:0435223547" className="block">Call for Quote</a>
             </button>
           </div>
         </div>

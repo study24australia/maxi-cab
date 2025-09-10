@@ -51,7 +51,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <h3 className="text-lg font-semibold text-gray-900">Phone</h3>
-                    <p className="text-gray-600">0436060000</p>
+                    <p className="text-gray-600">0435223547</p>
                     <p className="text-sm text-gray-500">Available 24/7 for bookings and inquiries</p>
                   </div>
                 </div>
@@ -93,7 +93,7 @@ const Contact = () => {
               {/* Quick Contact Buttons */}
               <div className="mt-8 flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
                 <a 
-                  href="tel:0436060000"
+                  href="tel:0435223547"
                   className="bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-lg font-semibold transition-colors duration-200 flex items-center justify-center space-x-2"
                 >
                   <Phone className="h-5 w-5" />
@@ -104,7 +104,7 @@ const Contact = () => {
                   <span>WhatsApp</span>
                 </button>
                 <a 
-                  href="https://wa.me/61436060000"
+                  href="https://wa.me/61435223547"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors duration-200 flex items-center justify-center space-x-2"
