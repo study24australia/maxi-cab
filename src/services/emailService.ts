@@ -36,6 +36,9 @@ export const sendBookingEmail = async (bookingData: BookingData): Promise<boolea
       has_wheelchair_card: bookingData.hasCard || 'Not specified',
       additional_notes: bookingData.notes || 'None',
       booking_datetime: new Date().toLocaleString(),
+      booking_reference: `MET-${Date.now()}`,
+      company_phone: '0435223547',
+      company_email: 'info@melbourneelitetaxi.com.au'
     };
 
     // Send email using EmailJS

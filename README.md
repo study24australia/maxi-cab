@@ -24,28 +24,44 @@ Create two templates in your EmailJS dashboard:
 
 #### Booking Notification Template (for business)
 ```
-Subject: New Booking Request - {{customer_name}}
+Subject: 🚖 New Booking Request - {{customer_name}} [{{booking_reference}}]
 
-New booking request received:
+═══════════════════════════════════════════════════════════════
+🚖 MELBOURNE ELITE TAXI - NEW BOOKING REQUEST
+═══════════════════════════════════════════════════════════════
 
-Customer Details:
+👤 CUSTOMER DETAILS:
+═══════════════════════════════════════════════════════════════
 - Name: {{customer_name}}
 - Phone: {{customer_phone}}
+- Booking Reference: {{booking_reference}}
 
-Trip Details:
+🚗 TRIP DETAILS:
+═══════════════════════════════════════════════════════════════
 - Pickup: {{pickup_location}}
 - Drop-off: {{dropoff_location}}
 - Date: {{booking_date}}
 - Time: {{booking_time}}
 - Service Type: {{service_type}}
 
-Additional Information:
+ℹ️ ADDITIONAL INFORMATION:
+═══════════════════════════════════════════════════════════════
 - Wheelchair Card: {{has_wheelchair_card}}
 - Notes: {{additional_notes}}
 
-Booking submitted at: {{booking_datetime}}
+📅 BOOKING DETAILS:
+═══════════════════════════════════════════════════════════════
+- Submitted: {{booking_datetime}}
+- Reference: {{booking_reference}}
+- Company Phone: {{company_phone}}
+- Company Email: {{company_email}}
 
-Please contact the customer to confirm the booking.
+🔔 ACTION REQUIRED:
+═══════════════════════════════════════════════════════════════
+Please contact {{customer_name}} at {{customer_phone}} to confirm this booking.
+
+Best regards,
+Melbourne Elite Taxi Booking System
 ```
 
 #### Customer Confirmation Template
