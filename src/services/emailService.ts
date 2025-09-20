@@ -55,7 +55,7 @@ export const sendBookingEmail = async (bookingData: BookingData): Promise<boolea
   
     return true;
   } catch (error) {
-    console.error('Failed to send email:', error);
+    console.error('Failed to send email:', templateParams);
     return false;
   }
 };
