@@ -60,9 +60,6 @@ const BookingForm: React.FC<BookingFormProps> = ({ onSuccess }) => {
       const emailSent = await sendBookingEmail(formData as BookingData);
       
       if (emailSent) {
-        // Optionally send customer confirmation
-        await sendCustomerConfirmation(formData as BookingData);
-        
         setSubmitted(true);
         if (onSuccess) onSuccess();
       } else {
