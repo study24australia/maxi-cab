@@ -21,8 +21,7 @@ export interface BookingData {
 }
 
 export const sendBookingEmail = async (bookingData: BookingData): Promise<boolean> => {
-  try {
-    // Prepare template parameters
+  // Prepare template parameters
     const templateParams = {
       to_email: 'aman42january@gmail.com', // Recipient email
       to_name: 'Melbourne Elite Taxi',
@@ -43,6 +42,8 @@ export const sendBookingEmail = async (bookingData: BookingData): Promise<boolea
       company_phone: '0435223547',
       company_email: 'info@melbourneelitetaxi.com.au'
     };
+  try {
+    
 
     // Send email using EmailJS
     const response = await emailjs.send(
