@@ -1,9 +1,9 @@
 import emailjs from '@emailjs/browser';
 
 // EmailJS configuration
-const EMAILJS_SERVICE_ID = 'service_r8iabck'; // Replace with your EmailJS service ID
-const EMAILJS_TEMPLATE_ID = 'template_4m7gyo5'; // Replace with your EmailJS template ID
-const EMAILJS_PUBLIC_KEY = 'kSW1BdcJIAb9BrX58'; // Replace with your EmailJS public key
+const EMAILJS_SERVICE_ID = 'your_service_id_here'; // Replace with your EmailJS service ID
+const EMAILJS_TEMPLATE_ID = 'your_template_id_here'; // Replace with your EmailJS template ID
+const EMAILJS_PUBLIC_KEY = 'your_public_key_here'; // Replace with your EmailJS public key
 
 // Initialize EmailJS
 emailjs.init(EMAILJS_PUBLIC_KEY);
@@ -24,9 +24,10 @@ export const sendBookingEmail = async (bookingData: BookingData): Promise<boolea
   try {
     // Prepare template parameters
     const templateParams = {
-      to_email: 'aman42january@gmail.com', // Add recipient email
+      to_email: 'info@melbourneelitetaxi.com.au', // Recipient email
       to_name: 'Melbourne Elite Taxi',
       from_name: bookingData.name,
+      from_email: 'noreply@melbourneelitetaxi.com.au',
       reply_to: bookingData.phone, // Add reply-to for easy callback
       customer_name: bookingData.name,
       customer_phone: bookingData.phone,
