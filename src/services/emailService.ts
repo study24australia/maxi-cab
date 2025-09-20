@@ -77,8 +77,7 @@ export const sendCustomerConfirmation = async (bookingData: BookingData): Promis
 
     // You'll need a separate template for customer confirmations
     const response = await emailjs.send(
-      EMAILJS_SERVICE_ID,
-      'template_customer_confirmation', // Replace with customer confirmation template ID
+      EMAILJS_SERVICE_ID, // Replace with customer confirmation template ID
       templateParams
     );
 
