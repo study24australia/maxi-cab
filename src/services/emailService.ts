@@ -1,9 +1,9 @@
 import emailjs from '@emailjs/browser';
 
 // EmailJS configuration
-const EMAILJS_SERVICE_ID = 'service_r8iabck'; // Replace with your EmailJS service ID
-const EMAILJS_TEMPLATE_ID = 'template_bc6khvq'; // Replace with your actual template ID from EmailJS dashboard
-const EMAILJS_PUBLIC_KEY = 'kSW1BdcJIAb9BrX58'; // Replace with your EmailJS public key
+const EMAILJS_SERVICE_ID = 'service_r8iabck';
+const EMAILJS_TEMPLATE_ID = 'template_bc6khvq'; // Use your working template ID
+const EMAILJS_PUBLIC_KEY = 'kSW1BdcJIAb9BrX58';
 
 // Initialize EmailJS
 emailjs.init(EMAILJS_PUBLIC_KEY);
