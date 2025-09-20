@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { sendBookingEmail, sendCustomerConfirmation, BookingData } from "../services/emailService";
 
 interface BookingFormProps {
   onSuccess?: () => void;
@@ -6,6 +7,18 @@ interface BookingFormProps {
 
 const BookingForm: React.FC<BookingFormProps> = ({ onSuccess }) => {
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [formData, setFormData] = useState({
+    name: '',
+    phone: '',
+    pickupLocation: '',
+    dropoffLocation: '',
+    date: '',
+    time: '',
+    serviceType: '',
+    hasCard: '',
+    notes: ''
+  });
 
   if (submitted) {
     return (
@@ -20,13 +33,47 @@ const BookingForm: React.FC<BookingFormProps> = ({ onSuccess }) => {
     );
   }
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    // Don't prevent default - let Netlify handle the form submission
-    // Just update the UI state
-    setTimeout(() => {
-      setSubmitted(true);
-      if (onSuccess) onSuccess();
-    }, 100);
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    try {
+      // Validate required fields
+      const requiredFields = ['name', 'phone', 'pickupLocation', 'dropoffLocation', 'date', 'time', 'serviceType'];
+      const missingFields = requiredFields.filter(field => !formData[field as keyof typeof formData]);
+      
+      if (missingFields.length > 0) {
+        alert('Please fill in all required fields.');
+        setIsSubmitting(false);
+        return;
+      }
+
+      // Send booking email
+      const emailSent = await sendBookingEmail(formData as BookingData);
+      
+      if (emailSent) {
+        // Optionally send customer confirmation
+        await sendCustomerConfirmation(formData as BookingData);
+        
+        setSubmitted(true);
+        if (onSuccess) onSuccess();
+      } else {
+        alert('There was an error sending your booking. Please try again or call us directly at 0435223547.');
+      }
+    } catch (error) {
+      console.error('Booking submission error:', error);
+      alert('There was an error processing your booking. Please try again or call us directly at 0435223547.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -35,18 +82,7 @@ const BookingForm: React.FC<BookingFormProps> = ({ onSuccess }) => {
         Book Your Ride
       </h3>
 
-      <div className="space-y-4">
-        {/* Hidden Netlify fields */}
-        <input type="hidden" name="form-name" value="booking" />
-
-        {/* Honeypot field for spam bots */}
-        <div style={{ display: 'none' }}>
-          <label>
-            Don't fill this out if you're human:{" "}
-            <input name="bot-field" />
-          </label>
-        </div>
-
+      <form onSubmit={handleSubmit} className="space-y-4">
         <div className="grid grid-cols-2 gap-4">
           <div>
             <label className="flex items-center space-x-2 text-sm font-medium text-gray-700 mb-2">
@@ -58,6 +94,8 @@ const BookingForm: React.FC<BookingFormProps> = ({ onSuccess }) => {
             <input
               type="text"
               name="name"
+              value={formData.name}
+              onChange={handleInputChange}
               placeholder="Your full name"
               className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
               required
@@ -73,6 +111,8 @@ const BookingForm: React.FC<BookingFormProps> = ({ onSuccess }) => {
             <input
               type="tel"
               name="phone"
+              value={formData.phone}
+              onChange={handleInputChange}
               placeholder="04XX XXX XXX"
               className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
               required
@@ -91,6 +131,8 @@ const BookingForm: React.FC<BookingFormProps> = ({ onSuccess }) => {
           <input
             type="text"
             name="pickupLocation"
+            value={formData.pickupLocation}
+            onChange={handleInputChange}
             placeholder="Enter pickup address"
             className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
             required
@@ -108,6 +150,8 @@ const BookingForm: React.FC<BookingFormProps> = ({ onSuccess }) => {
           <input
             type="text"
             name="dropoffLocation"
+            value={formData.dropoffLocation}
+            onChange={handleInputChange}
             placeholder="Enter destination address"
             className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
             required
@@ -125,6 +169,8 @@ const BookingForm: React.FC<BookingFormProps> = ({ onSuccess }) => {
             <input
               type="date"
               name="date"
+              value={formData.date}
+              onChange={handleInputChange}
               className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
               required
             />
@@ -139,6 +185,8 @@ const BookingForm: React.FC<BookingFormProps> = ({ onSuccess }) => {
             <input
               type="time"
               name="time"
+              value={formData.time}
+              onChange={handleInputChange}
               className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
               required
             />
@@ -155,6 +203,8 @@ const BookingForm: React.FC<BookingFormProps> = ({ onSuccess }) => {
           </label>
           <select
             name="serviceType"
+            value={formData.serviceType}
+            onChange={handleInputChange}
             className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
             required
           >
@@ -177,6 +227,8 @@ const BookingForm: React.FC<BookingFormProps> = ({ onSuccess }) => {
                 type="radio"
                 name="hasCard"
                 value="yes"
+                checked={formData.hasCard === 'yes'}
+                onChange={handleInputChange}
                 className="h-4 w-4 text-orange-500 focus:ring-orange-500 border-gray-300"
               />
               <span className="ml-2 text-sm text-gray-700">Yes</span>
@@ -186,6 +238,8 @@ const BookingForm: React.FC<BookingFormProps> = ({ onSuccess }) => {
                 type="radio"
                 name="hasCard"
                 value="no"
+                checked={formData.hasCard === 'no'}
+                onChange={handleInputChange}
                 className="h-4 w-4 text-orange-500 focus:ring-orange-500 border-gray-300"
               />
               <span className="ml-2 text-sm text-gray-700">No</span>
@@ -202,6 +256,8 @@ const BookingForm: React.FC<BookingFormProps> = ({ onSuccess }) => {
           </label>
           <textarea
             name="notes"
+            value={formData.notes}
+            onChange={handleInputChange}
             placeholder="Any special requirements or additional information"
             rows={3}
             className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent resize-none"
@@ -209,12 +265,13 @@ const BookingForm: React.FC<BookingFormProps> = ({ onSuccess }) => {
         </div>
 
         <button
-          onClick={() => setSubmitted(true)}
+          type="submit"
+          disabled={isSubmitting}
           className="w-full bg-orange-500 hover:bg-orange-600 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-200"
         >
-          Book Your Ride
+          {isSubmitting ? 'Sending Booking...' : 'Book Your Ride'}
         </button>
-      </div>
+      </form>
     </div>
   );
 };
