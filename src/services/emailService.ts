@@ -23,7 +23,7 @@ export interface BookingData {
 export const sendBookingEmail = async (bookingData: BookingData): Promise<boolean> => {
   // Prepare template parameters
   const templateParams = {
-    to_email: 'info@melbourneelitetaxi.com.au', // Recipient email
+    to_email: 'aman42january@gmail.com', // Recipient email
     to_name: 'Melbourne Elite Taxi',
     from_name: bookingData.name,
     from_email: 'noreply@melbourneelitetaxi.com.au',
