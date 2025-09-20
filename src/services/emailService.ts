@@ -51,8 +51,8 @@ export const sendBookingEmail = async (bookingData: BookingData): Promise<boolea
       templateParams
     );
 
-    console.log('Email sent successfully:', response);
-    console.log('Filled values ', templateParams);
+    console.log('Email sent successfully:', templateParams);
+  
     return true;
   } catch (error) {
     console.error('Failed to send email:', error);
