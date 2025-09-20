@@ -23,25 +23,26 @@ export interface BookingData {
 export const sendBookingEmail = async (bookingData: BookingData): Promise<boolean> => {
   // Prepare template parameters
   const templateParams = {
-      to_email: 'aman42january@gmail.com', // Recipient email
-      to_name: 'Melbourne Elite Taxi',
-      from_name: bookingData.name,
-      from_email: 'aman24january@gmail.com',
-      reply_to: bookingData.phone, // Add reply-to for easy callback
-      customer_name: bookingData.name,
-      customer_phone: bookingData.phone,
-      pickup_location: bookingData.pickupLocation,
-      dropoff_location: bookingData.dropoffLocation,
-      booking_date: bookingData.date,
-      booking_time: bookingData.time,
-      service_type: bookingData.serviceType,
-      has_wheelchair_card: bookingData.hasCard || 'Not specified',
-      additional_notes: bookingData.notes || 'None',
-      booking_datetime: new Date().toLocaleString(),
-      booking_reference: `MET-${Date.now()}`,
-      company_phone: '0435223547',
-      company_email: 'info@melbourneelitetaxi.com.au'
-    };
+    to_email: 'info@melbourneelitetaxi.com.au', // Recipient email
+    to_name: 'Melbourne Elite Taxi',
+    from_name: bookingData.name,
+    from_email: 'noreply@melbourneelitetaxi.com.au',
+    reply_to: bookingData.phone,
+    customer_name: bookingData.name,
+    customer_phone: bookingData.phone,
+    pickup_location: bookingData.pickupLocation,
+    dropoff_location: bookingData.dropoffLocation,
+    booking_date: bookingData.date,
+    booking_time: bookingData.time,
+    service_type: bookingData.serviceType,
+    has_wheelchair_card: bookingData.hasCard || 'Not specified',
+    additional_notes: bookingData.notes || 'None',
+    booking_datetime: new Date().toLocaleString(),
+    booking_reference: `MET-${Date.now()}`,
+    company_phone: '0435223547',
+    company_email: 'info@melbourneelitetaxi.com.au'
+  };
+
   try {
     console.log('Attempting to send email with params:', templateParams);
     console.log('Using EmailJS config:', {
