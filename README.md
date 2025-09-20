@@ -25,6 +25,9 @@ Create two templates in your EmailJS dashboard:
 #### Booking Notification Template (for business)
 ```
 Subject: 🚖 New Booking Request - {{customer_name}} [{{booking_reference}}]
+To: {{to_email}}
+From: {{from_name}}
+Reply-To: {{reply_to}}
 
 ═══════════════════════════════════════════════════════════════
 🚖 MELBOURNE ELITE TAXI - NEW BOOKING REQUEST
