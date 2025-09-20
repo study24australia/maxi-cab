@@ -22,7 +22,7 @@ export interface BookingData {
 
 export const sendBookingEmail = async (bookingData: BookingData): Promise<boolean> => {
   // Prepare template parameters
-    var templateParams = {
+  const templateParams = {
       to_email: 'aman42january@gmail.com', // Recipient email
       to_name: 'Melbourne Elite Taxi',
       from_name: bookingData.name,
@@ -43,7 +43,12 @@ export const sendBookingEmail = async (bookingData: BookingData): Promise<boolea
       company_email: 'info@melbourneelitetaxi.com.au'
     };
   try {
-    
+    console.log('Attempting to send email with params:', templateParams);
+    console.log('Using EmailJS config:', {
+      serviceId: EMAILJS_SERVICE_ID,
+      templateId: EMAILJS_TEMPLATE_ID,
+      publicKey: EMAILJS_PUBLIC_KEY
+    });
 
     // Send email using EmailJS
     const response = await emailjs.send(
@@ -52,11 +57,19 @@ export const sendBookingEmail = async (bookingData: BookingData): Promise<boolea
       templateParams
     );
 
-    console.log('Email sent successfully:', templateParams);
+    console.log('Email sent successfully:', response);
   
     return true;
   } catch (error) {
-    console.error('Failed to send email:', templateParams);
+    console.error('Failed to send email:', error);
+    console.error('Template params were:', templateParams);
+    
+    // Log specific error details
+    if (error && typeof error === 'object' && 'status' in error) {
+      console.error('EmailJS Error Status:', error.status);
+      console.error('EmailJS Error Text:', error.text);
+    }
+    
     return false;
   }
 };
