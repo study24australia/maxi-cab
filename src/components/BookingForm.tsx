@@ -186,6 +186,10 @@ const BookingForm: React.FC<BookingFormProps> = ({ onSuccess }) => {
               value={formData.time}
               onChange={handleInputChange}
               className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+              step="60"
+              pattern="[0-9]{2}:[0-9]{2}"
+              title="Please enter time in 24-hour format (HH:MM)"
+              placeholder="14:30"
               required
             />
           </div>
