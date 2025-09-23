@@ -186,6 +186,7 @@ const BookingForm: React.FC<BookingFormProps> = ({ onSuccess }) => {
               value={formData.time}
               onChange={handleInputChange}
               className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+             step="300"
               required
             />
           </div>
