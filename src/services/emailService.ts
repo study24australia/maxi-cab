@@ -16,6 +16,7 @@ export interface BookingData {
   date: string;
   time: string;
   serviceType: string;
+  passengerCount: string;
   hasCard?: string;
   notes?: string;
 }
@@ -35,6 +36,7 @@ export const sendBookingEmail = async (bookingData: BookingData): Promise<boolea
     booking_date: bookingData.date,
     booking_time: bookingData.time,
     service_type: bookingData.serviceType,
+    passenger_count: bookingData.passengerCount,
     has_wheelchair_card: bookingData.hasCard || 'Not specified',
     additional_notes: bookingData.notes || 'None',
     booking_datetime: new Date().toLocaleString(),
