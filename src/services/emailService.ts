@@ -1,10 +1,9 @@
 import emailjs from '@emailjs/browser';
 
 // EmailJS configuration
-//https://bolt.new/~/github-qecohtwg
-const EMAILJS_SERVICE_ID = 'service_r8iabck';
-const EMAILJS_TEMPLATE_ID = 'template_p3irzrk'//'template_lda9ada' //'template_bc6khvq'; // Use your working template ID
-const EMAILJS_PUBLIC_KEY = 'kSW1BdcJIAb9BrX58';
+const EMAILJS_SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+const EMAILJS_PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
 // Initialize EmailJS
 emailjs.init(EMAILJS_PUBLIC_KEY);
