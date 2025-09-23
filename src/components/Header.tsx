@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Car, Menu, X, ChevronDown, ArrowRight } from 'lucide-react';
+import { Car, Menu, X, ChevronDown, ArrowRight, Phone } from 'lucide-react';
 
 interface HeaderProps {
   onBookNow: () => void;
@@ -30,6 +30,24 @@ const Header: React.FC<HeaderProps> = ({ onBookNow }) => {
     setIsServicesOpen(false);
   };
   return (
+    <>
+      {/* Top Phone Bar */}
+      <div className="bg-black text-white py-2">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-center space-x-2">
+            <Phone className="h-4 w-4 text-orange-500" />
+            <span className="text-sm font-medium">Call Now:</span>
+            <a 
+              href="tel:0435223547" 
+              className="text-orange-500 hover:text-orange-400 font-bold text-sm transition-colors"
+            >
+              0435223547
+            </a>
+            <span className="text-gray-400 text-sm hidden sm:inline">- Available 24/7</span>
+          </div>
+        </div>
+      </div>
+
     <header className="bg-orange-500 shadow-lg relative z-50" style={{ backgroundColor: '#ff6f22' }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
@@ -212,6 +230,7 @@ const Header: React.FC<HeaderProps> = ({ onBookNow }) => {
         )}
       </div>
     </header>
+    </>
   );
 };
 
