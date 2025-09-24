@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import { Heart, Shield, Users, ArrowLeft, Clock, CheckCircle } from 'lucide-react';
+import SEO from '../../components/SEO';
 import BookingModal from '../../components/BookingModal';
 
 const NDISRun = () => {
@@ -27,6 +28,12 @@ const NDISRun = () => {
 
   return (
     <div className="min-h-screen">
+      <SEO 
+        title="NDIS Transport Melbourne - Registered Disability Support Services"
+        description="NDIS registered transport provider in Melbourne. Professional disability support drivers, wheelchair accessible vehicles, flexible scheduling for NDIS participants."
+        keywords="NDIS transport Melbourne, NDIS taxi, disability support transport, NDIS registered provider, wheelchair accessible NDIS, community participation transport"
+        url="https://wheelchairide.taxi/services/ndis-run"
+      />
       {/* Breadcrumb */}
       <div className="bg-gray-50 py-4">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

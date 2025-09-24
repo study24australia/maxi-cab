@@ -1,4 +1,5 @@
 import React from 'react';
+import SEO from '../components/SEO';
 import BookingForm from '../components/BookingForm';
 import { Clock, Car, MapPin, Users, Shield, Star, Phone, MessageCircle } from 'lucide-react';
 
@@ -90,6 +91,12 @@ const Home: React.FC<HomeProps> = ({ onBookNow }) => {
 
   return (
     <div className="min-h-screen">
+      <SEO 
+        title="Melbourne Elite Taxi - Wheelchair Accessible Taxi & Maxi Cab Services"
+        description="Professional wheelchair accessible taxi and maxi cab services in Melbourne. 24/7 NDIS transport, baby seat transfers, VIP services. Book online or call 0435223547."
+        keywords="wheelchair taxi Melbourne, accessible transport, NDIS taxi, maxi cab, baby seat taxi, Melbourne taxi service, disability transport, wheelchair accessible vehicle"
+        url="https://wheelchairide.taxi/"
+      />
       {/* Hero Section */}
       <section 
         id="booking"

@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import { Accessibility, Heart, Shield, ArrowLeft } from 'lucide-react';
+import SEO from '../../components/SEO';
 import BookingModal from '../../components/BookingModal';
 
 const WheelchairTaxi = () => {
@@ -18,6 +19,13 @@ const WheelchairTaxi = () => {
 
   return (
     <div className="min-h-screen">
+      <SEO 
+        title="Wheelchair Accessible Taxi Melbourne - Dignified Disability Transport"
+        description="Professional wheelchair accessible taxi service in Melbourne. Fully equipped vehicles with ramps, safety restraints, and trained drivers. NDIS approved transport service."
+        keywords="wheelchair accessible taxi Melbourne, disability transport, wheelchair taxi, accessible vehicle, NDIS transport, mobility taxi, wheelchair cab Melbourne"
+        url="https://wheelchairide.taxi/services/wheelchair-taxi"
+        image="https://wheelchairide.taxi/wheelchair.png"
+      />
       {/* Breadcrumb */}
       <div className="bg-gray-50 py-4">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
