@@ -31,7 +31,7 @@ const Contact = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-5xl font-bold mb-6">Contact Us</h1>
           <p className="text-xl max-w-3xl mx-auto leading-relaxed">
-            Get in touch with Melbourne Elite Taxi with Wheelchair Ride. We're here to help with all your transportation needs.
+            Get in touch with Wheelchair Ride. We're here to help with all your transportation needs.
           </p>
         </div>
       </section>

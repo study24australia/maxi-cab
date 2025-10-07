@@ -92,7 +92,7 @@ const Home: React.FC<HomeProps> = ({ onBookNow }) => {
   return (
     <div className="min-h-screen">
       <SEO 
-        title="Melbourne Elite Taxi with Wheelchair Ride - Wheelchair Accessible Taxi & Maxi Cab Services"
+        title="Wheelchair Ride - Wheelchair Accessible Taxi & Maxi Cab Services"
         description="Professional wheelchair accessible taxi and maxi cab services in Melbourne. 24/7 NDIS transport, baby seat transfers, VIP services. Book online or call 0435223547."
         keywords="wheelchair taxi Melbourne, accessible transport, NDIS taxi, maxi cab, baby seat taxi, Melbourne taxi service, disability transport, wheelchair accessible vehicle"
         url="https://wheelchairide.taxi/"
@@ -148,7 +148,7 @@ const Home: React.FC<HomeProps> = ({ onBookNow }) => {
       <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Why Choose Melbourne Elite Taxi with Wheelchair Ride?</h2>
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">Why Choose Wheelchair Ride?</h2>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
