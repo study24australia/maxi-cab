@@ -57,8 +57,8 @@ const Header: React.FC<HeaderProps> = ({ onBookNow }) => {
               <Car className="h-6 w-6" />
             </div>
             <div className="text-black">
-              <div className="font-bold text-lg">MELBOURNE</div>
-              <div className="text-sm font-medium">ELITE TAXI</div>
+              <div className="font-bold text-lg">WHEELCHAIR</div>
+              <div className="text-sm font-medium">RIDE</div>
             </div>
           </Link>
 

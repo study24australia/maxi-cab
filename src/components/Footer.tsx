@@ -18,8 +18,8 @@ const Footer: React.FC<FooterProps> = ({ onBookNow }) => {
                 <Car className="h-6 w-6" />
               </div>
               <div>
-                <div className="font-bold text-lg">MELBOURNE</div>
-                <div className="text-sm font-medium text-orange-500">ELITE TAXI</div>
+                <div className="font-bold text-lg">WHEELCHAIR</div>
+                <div className="text-sm font-medium text-orange-500">RIDE</div>
               </div>
             </div>
             <p className="text-gray-300 mb-4">
