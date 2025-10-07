@@ -18,7 +18,7 @@ const SEO: React.FC<SEOProps> = ({
   url = "https://wheelchairide.taxi/",
   type = "website"
 }) => {
-  const fullTitle = title.includes('Melbourne Elite Taxi') ? title : `${title} | Melbourne Elite Taxi`;
+  const fullTitle = title.includes('Melbourne Elite Taxi with Wheelchair Ride') ? title : `${title} | Melbourne Elite Taxi with Wheelchair Ride`;
 
   return (
     <Helmet>

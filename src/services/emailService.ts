@@ -25,7 +25,7 @@ export const sendBookingEmail = async (bookingData: BookingData): Promise<boolea
   // Prepare template parameters
   const templateParams = {
     to_email: 'aman42january@gmail.com', // Recipient email
-    to_name: 'Melbourne Elite Taxi',
+    to_name: 'Melbourne Elite Taxi with Wheelchair Ride',
     from_name: bookingData.name,
     from_email: 'noreply@melbourneelitetaxi.com.au',
     reply_to: bookingData.phone,

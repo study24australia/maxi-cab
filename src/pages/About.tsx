@@ -52,7 +52,7 @@ const About = () => {
       {/* Hero Section */}
       <section className="bg-gradient-to-r from-orange-500 to-orange-600 text-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-5xl font-bold mb-6">About Melbourne Elite Taxi</h1>
+          <h1 className="text-5xl font-bold mb-6">About Melbourne Elite Taxi with Wheelchair Ride</h1>
           <p className="text-xl max-w-3xl mx-auto leading-relaxed">
             Your trusted transportation partner in Melbourne, committed to excellence, safety, and customer satisfaction.
           </p>
@@ -160,7 +160,7 @@ const About = () => {
       <section className="py-16 bg-orange-500 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-4xl font-bold mb-4">Experience the Difference</h2>
-          <p className="text-xl mb-8">Join thousands of satisfied customers who trust Melbourne Elite Taxi.</p>
+          <p className="text-xl mb-8">Join thousands of satisfied customers who trust Melbourne Elite Taxi with Wheelchair Ride.</p>
           <Link 
             to="/#booking"
             className="inline-block bg-white text-orange-500 hover:bg-gray-100 px-8 py-4 rounded-lg font-semibold transition-colors duration-200"
