@@ -99,10 +99,7 @@ const Contact = () => {
                   <Phone className="h-5 w-5" />
                   <span>Call Now</span>
                 </a>
-                <button className="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors duration-200 flex items-center justify-center space-x-2">
-                  <MessageCircle className="h-5 w-5" />
-                  <span>WhatsApp</span>
-                </button>
+               
                 <a 
                   href="https://wa.me/61435223547"
                   target="_blank"
