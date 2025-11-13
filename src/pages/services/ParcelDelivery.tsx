@@ -8,21 +8,48 @@ const ParcelDelivery = () => {
   const [isBookingModalOpen, setIsBookingModalOpen] = useState(false);
 
   const features = [
-    'Same-day delivery available',
-    'Secure handling and transport',
-    'Real-time tracking updates',
-    'Proof of delivery confirmation',
-    'Fragile item specialists',
-    'Flexible pickup scheduling'
+    'Same-day delivery and express options available',
+    'Secure handling for all package types',
+    'Real-time tracking and delivery updates',
+    'Proof of delivery confirmation provided',
+    'Special handling for fragile or medical items',
+    'Flexible pickup scheduling via book maxi taxi system',
+    'Large taxi and maxi cab options for bulk deliveries'
+  ];
+
+  const whyChoose = [
+    'Trusted maxi cab Melbourne provider with citywide coverage',
+    'Fast, insured, and trackable parcel delivery services',
+    'Flexible maxi taxi hire and wheelchair taxi options',
+    'Professional drivers and 24/7 availability',
+    'Affordable rates for individuals and businesses'
   ];
 
   const deliveryTypes = [
-    'Documents and papers',
-    'Small packages',
-    'Fragile items',
-    'Medical supplies',
-    'Business deliveries',
-    'Personal items'
+    {
+      title: 'Documents and Papers',
+      description: 'Fast delivery of contracts, files, and paperwork'
+    },
+    {
+      title: 'Small Packages',
+      description: 'Quick local deliveries within Melbourne'
+    },
+    {
+      title: 'Fragile Items',
+      description: 'Secure handling and careful transport'
+    },
+    {
+      title: 'Medical Supplies',
+      description: 'Safe, temperature-controlled delivery options'
+    },
+    {
+      title: 'Business Deliveries',
+      description: 'Reliable courier service for companies and offices'
+    },
+    {
+      title: 'Personal Items',
+      description: 'Gifts, essentials, and special requests handled with care'
+    }
   ];
 
   return (
@@ -42,11 +69,17 @@ const ParcelDelivery = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h1 className="text-5xl font-bold mb-6">Parcel Delivery Service</h1>
+              <h1 className="text-5xl font-bold mb-6">Parcel Delivery Service in Melbourne</h1>
               <p className="text-xl leading-relaxed mb-8">
-                Fast and secure parcel delivery services across Melbourne and surrounding areas. Your packages handled with care and delivered on time.
+                Get your packages delivered safely, quickly, and reliably with Wheelchair Ride's parcel delivery service. Whether it's urgent business documents, medical supplies, or fragile personal items, we offer fast and secure delivery solutions across Melbourne and surrounding areas.
               </p>
-              <button 
+              <p className="text-lg leading-relaxed mb-8">
+                Our fleet of maxi cabs Melbourne and large taxis ensures your parcels are handled with care and reach their destination on time. Choose our same-day delivery or scheduled drop-off options and enjoy peace of mind with real-time tracking updates.
+              </p>
+              <p className="text-lg font-semibold mb-8">
+                Book Delivery Now — reliable, insured, and efficient parcel delivery at your doorstep.
+              </p>
+              <button
                 onClick={() => setIsBookingModalOpen(true)}
                 className="bg-black text-white px-8 py-4 rounded-lg font-semibold hover:bg-gray-800 transition-colors duration-200"
               >
@@ -69,8 +102,11 @@ const ParcelDelivery = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">Reliable Delivery Solutions</h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
-              Whether it's urgent documents, fragile items, or important packages, we ensure your deliveries reach their destination safely and on time.
+            <p className="text-gray-600 max-w-3xl mx-auto">
+              Whether you're a business sending important contracts or an individual delivering a gift, Wheelchair Ride guarantees timely, secure, and professional parcel delivery across Melbourne.
+            </p>
+            <p className="text-gray-600 max-w-3xl mx-auto mt-4">
+              Our maxi taxi Melbourne fleet is equipped to carry everything from small envelopes to large parcels, offering the flexibility you need. You can even book a maxi taxi for special or fragile item deliveries with extra care and attention.
             </p>
           </div>
 
@@ -80,7 +116,8 @@ const ParcelDelivery = () => {
                 <Package className="h-8 w-8" />
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-3">Secure Handling</h3>
-              <p className="text-gray-600">Professional handling of all package types with special care for fragile items.</p>
+              <p className="text-gray-600">We treat your parcels as if they were our own. Every maxi cab Melbourne driver is trained in secure handling and transport procedures, ensuring that items — especially fragile or high-value goods — are packed, loaded, and delivered safely.</p>
+              <p className="text-gray-600 mt-3">From medical supplies to business packages, our vehicles are clean, spacious, and equipped for professional parcel logistics.</p>
             </div>
 
             <div className="text-center p-6 bg-gray-50 rounded-xl">
@@ -88,7 +125,8 @@ const ParcelDelivery = () => {
                 <Clock className="h-8 w-8" />
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-3">Fast Delivery</h3>
-              <p className="text-gray-600">Same-day delivery options with real-time tracking and updates.</p>
+              <p className="text-gray-600">Need something delivered urgently? Our same-day delivery service guarantees quick turnarounds and real-time updates. With our maxi taxi booking Melbourne system, you can easily schedule pickups or request instant deliveries with just a few clicks.</p>
+              <p className="text-gray-600 mt-3">Whether it's a maxi taxi near me delivery request or a large taxi for multiple items, we'll ensure it's handled promptly and efficiently.</p>
             </div>
 
             <div className="text-center p-6 bg-gray-50 rounded-xl">
@@ -96,18 +134,22 @@ const ParcelDelivery = () => {
                 <Shield className="h-8 w-8" />
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-3">Insured Service</h3>
-              <p className="text-gray-600">Fully insured delivery service for your complete peace of mind.</p>
+              <p className="text-gray-600">For your complete peace of mind, Wheelchair Ride offers fully insured parcel delivery services. Your items are protected from pickup to drop-off, with transparent proof of delivery provided.</p>
+              <p className="text-gray-600 mt-3">Our maxi taxi hire and wheelchair taxi Melbourne options also cater to accessible delivery needs — ensuring everyone can send and receive parcels safely.</p>
             </div>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             <div>
               <h3 className="text-2xl font-bold text-gray-900 mb-6">What We Deliver</h3>
-              <div className="space-y-3">
+              <div className="space-y-4">
                 {deliveryTypes.map((type, index) => (
-                  <div key={index} className="flex items-center space-x-3 p-3 bg-gray-50 rounded-lg">
-                    <div className="w-3 h-3 bg-orange-500 rounded-full"></div>
-                    <span className="text-gray-700 font-medium">{type}</span>
+                  <div key={index} className="p-4 bg-gray-50 rounded-lg">
+                    <div className="flex items-center space-x-3 mb-2">
+                      <div className="w-3 h-3 bg-orange-500 rounded-full"></div>
+                      <span className="text-gray-900 font-semibold">{type.title}</span>
+                    </div>
+                    <p className="text-gray-600 ml-6">{type.description}</p>
                   </div>
                 ))}
               </div>
@@ -123,6 +165,23 @@ const ParcelDelivery = () => {
                   </div>
                 ))}
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Why Choose Section */}
+      <section className="py-16 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="bg-white p-8 rounded-2xl shadow-lg">
+            <h3 className="text-2xl font-bold text-gray-900 mb-6">Why Choose Wheelchair Ride for Parcel Delivery?</h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {whyChoose.map((reason, index) => (
+                <div key={index} className="flex items-center space-x-3">
+                  <div className="w-2 h-2 bg-orange-500 rounded-full"></div>
+                  <span className="text-gray-600">{reason}</span>
+                </div>
+              ))}
             </div>
           </div>
         </div>
