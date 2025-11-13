@@ -12,17 +12,17 @@ const Home: React.FC<HomeProps> = ({ onBookNow }) => {
     {
       icon: Clock,
       title: '24/7 Availability',
-      description: 'Round-the-clock service to meet all your transportation needs, any time of day or night.'
+      description: 'Need a maxi taxi near me or an urgent wheelchair taxi in Melbourne? We operate round-the-clock to serve you anytime, anywhere.'
     },
     {
       icon: Car,
       title: 'Modern Fleet',
-      description: 'Clean, comfortable, and well-maintained vehicles with professional drivers.'
+      description: 'From 12-seater maxi taxis to large taxis, every vehicle is clean, well-maintained, and equipped for your comfort. Choose from maxi taxi hire, wheelchair-accessible taxis, and group travel options across Melbourne.'
     },
     {
       icon: MapPin,
       title: 'Local Expertise',
-      description: 'Experienced drivers with extensive knowledge of Melbourne and surrounding areas.'
+      description: 'Our professional drivers know Melbourne like the back of their hand from the city to the airport, and everywhere in between. Book your maxi taxi Melbourne airport ride with confidence.'
     }
   ];
 
