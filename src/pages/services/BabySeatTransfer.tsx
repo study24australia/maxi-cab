@@ -8,19 +8,19 @@ const BabySeatTransfer = () => {
   const [isBookingModalOpen, setIsBookingModalOpen] = useState(false);
 
   const features = [
-    'Certified and inspected child seats',
+    'Certified and regularly inspected child seats',
     'Safety-trained professional drivers',
-    'Age-appropriate seat options',
-    'Hospital transfer specialists',
-    'Family-friendly vehicles',
-    'Extra care and attention'
+    'Multiple age-appropriate seat options',
+    'Hospital transfer and emergency support',
+    'Spacious large taxis and maxi cabs Melbourne for family travel',
+    'Family-friendly service with extra care and attention'
   ];
 
   const seatTypes = [
-    'Infant seats (0-12 months)',
-    'Convertible seats (0-4 years)',
-    'Booster seats (4-8 years)',
-    'High-back boosters (4-12 years)'
+    'Infant seats (0–12 months)',
+    'Convertible seats (0–4 years)',
+    'Booster seats (4–8 years)',
+    'High-back boosters (4–12 years)'
   ];
 
   return (
@@ -40,11 +40,17 @@ const BabySeatTransfer = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h1 className="text-5xl font-bold mb-6">Baby Seat Transfer</h1>
+              <h1 className="text-5xl font-bold mb-6">Baby Seat Transfer in Melbourne</h1>
               <p className="text-xl leading-relaxed mb-8">
-                Safe and secure transportation for your little ones with certified child seats. Your family's safety is our top priority.
+                Travel with peace of mind knowing your little ones are safe and comfortable. Our baby seat transfer service offers safe and secure transportation in clean, spacious maxi taxis Melbourne equipped with certified child seats. Whether you're heading to the airport, hospital, or a family event, your family's safety is always our top priority.
               </p>
-              <button 
+              <p className="text-lg leading-relaxed mb-8">
+                Choose Wheelchair Ride for reliable maxi cab Melbourne and large taxi options that cater to families of all sizes — ensuring every ride is smooth, secure, and stress-free.
+              </p>
+              <p className="text-lg font-semibold mb-8">
+                Book Family Transfer Now — comfort, safety, and convenience in every trip.
+              </p>
+              <button
                 onClick={() => setIsBookingModalOpen(true)}
                 className="bg-black text-white px-8 py-4 rounded-lg font-semibold hover:bg-gray-800 transition-colors duration-200"
               >
@@ -67,8 +73,8 @@ const BabySeatTransfer = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">Safety First Approach</h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
-              We understand the precious nature of your cargo. Our baby seat transfer service is designed with your child's safety and comfort as the absolute priority.
+            <p className="text-gray-600 max-w-3xl mx-auto">
+              We understand how precious your little passengers are. That's why our maxi taxi Melbourne baby seat transfer service is designed to deliver a safe, smooth, and comfortable ride every time. From maxi taxi near me requests to pre-scheduled maxi taxi bookings, our vehicles are equipped with age-appropriate safety seats and driven by professionals trained in child care and road safety.
             </p>
           </div>
 
@@ -78,7 +84,7 @@ const BabySeatTransfer = () => {
                 <Baby className="h-8 w-8" />
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-3">Certified Equipment</h3>
-              <p className="text-gray-600">All our child seats meet Australian safety standards and are regularly inspected.</p>
+              <p className="text-gray-600">All our child seats meet Australian Safety Standards and are inspected regularly. Whether you book a wheelchair maxi taxi or a 12-seater maxi taxi for family travel, every vehicle comes equipped with properly installed and certified baby seats.</p>
             </div>
 
             <div className="text-center p-6 bg-gray-50 rounded-xl">
@@ -86,7 +92,7 @@ const BabySeatTransfer = () => {
                 <Shield className="h-8 w-8" />
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-3">Safety Training</h3>
-              <p className="text-gray-600">Our drivers receive specialized training in child passenger safety and care.</p>
+              <p className="text-gray-600">Our experienced drivers receive specialized training in child passenger safety, ensuring each journey is handled with the utmost care — whether it's a hospital transfer, airport pickup, or family outing.</p>
             </div>
 
             <div className="text-center p-6 bg-gray-50 rounded-xl">
@@ -94,7 +100,7 @@ const BabySeatTransfer = () => {
                 <Heart className="h-8 w-8" />
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-3">Extra Care</h3>
-              <p className="text-gray-600">We provide gentle, smooth rides with extra attention to your child's comfort.</p>
+              <p className="text-gray-600">We pride ourselves on offering gentle, smooth rides with extra attention to your child's comfort. From maxi taxi hire for long-distance trips to wheelchair-accessible taxis Melbourne for inclusive family travel — we cover it all.</p>
             </div>
           </div>
         </div>
@@ -113,6 +119,9 @@ const BabySeatTransfer = () => {
                     <span className="text-gray-700 font-medium">{type}</span>
                   </div>
                 ))}
+                <p className="text-gray-600 mt-6 pt-6 border-t border-gray-200">
+                  All seat types are professionally installed and available upon request when you book your maxi taxi.
+                </p>
               </div>
             </div>
             
