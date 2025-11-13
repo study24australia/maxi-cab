@@ -28,62 +28,62 @@ const Home: React.FC<HomeProps> = ({ onBookNow }) => {
 
   const services = [
     {
+      title: 'Airport Transfers',
+      description: 'Reliable maxi taxi to airport and wheelchair taxi Melbourne airport transfers. On-time pickups, smooth drop-offs, and stress-free travel.',
+      image: '/taxi.jpg',
+      link: '/services/vip-transfer'
+    },
+    {
       title: 'Event Transfer',
-      description: 'Make your special events stress-free with our reliable and stylish transfers.',
+      description: 'Book a maxi cab Melbourne or a 12-seater maxi taxi for weddings, parties, or corporate events, arrive in comfort and style.',
       image: '/event_transfer.png',
       link: '/services/event-transfer'
     },
     {
-      title: 'Baby Seat Transfer',
-      description: 'Safe and secure transportation for your little ones with certified child seats.',
-      image: '/baby_seat.png',
-      link: '/services/baby-seat-transfer'
-    },
-    {
       title: 'Wheelchair Taxi',
-      description: 'Dignified, safe, and comfortable transportation for passengers with mobility needs.',
+      description: 'Dignified and safe transport for passengers with mobility needs. Our wheelchair-accessible taxis Melbourne are equipped with ramps and professional drivers trained for care and safety.',
       image: '/wheelchair.png',
       link: '/services/wheelchair-taxi'
     },
     {
-      title: 'Melbourne Sightseeing',
-      description: 'Discover Melbourne\'s best attractions with our guided sightseeing tours.',
-      image: '/sight.png',
-      link: '/services/melbourne-sightseeing'
-    },
-    {
-      title: 'VIP Transfer',
-      description: 'Premium luxury transportation for your most important journeys.',
-      image: '/vip.png',
-      link: '/services/vip-transfer'
+      title: 'Baby Seat Transfer',
+      description: 'Travel safely with your little ones in our large taxis equipped with baby and booster seats.',
+      image: '/baby_seat.png',
+      link: '/services/baby-seat-transfer'
     },
     {
       title: 'Group Transfer',
-      description: 'Comfortable transportation solutions for larger groups and families.',
+      description: 'Perfect for family outings, airport runs, or tours. Book a maxi taxi and enjoy spacious, comfortable travel with room for everyone.',
       image: '/group.png',
       link: '/services/group-transfer'
     },
     {
       title: 'NDIS Run',
-      description: 'Specialized transportation services for NDIS participants with professional care.',
+      description: 'Trusted by NDIS participants for professional, compassionate, and timely transport services.',
       image: '/wheelchair.png',
       link: '/services/ndis-run'
     },
     {
+      title: 'Melbourne Sightseeing',
+      description: 'Explore the city\'s iconic attractions with a professional driver and a comfortable maxi taxi Melbourne ride.',
+      image: '/sight.png',
+      link: '/services/melbourne-sightseeing'
+    },
+    {
       title: 'School Run',
-      description: 'Safe and reliable school transportation for children with trusted drivers.',
+      description: 'Safe and reliable maxi taxi booking Melbourne services for school children and parents seeking peace of mind.',
       image: '/baby_seat.png',
       link: '/services/school-run'
     },
     {
       title: 'Parcel Delivery',
-      description: 'Fast and secure parcel delivery services across Melbourne and surrounding areas.',
+      description: 'Fast and secure deliveries across Melbourne from urgent documents to parcels.',
       image: '/parcel.png',
       link: '/services/parcel-delivery'
     },
     {
       title: 'Furniture Moving',
-      description: 'Professional furniture moving and transportation services with careful handling.',
+      description: 'Professional and careful furniture moving service using large taxis and maxi cabs to fit your needs.',
       image: '/furniture.png',
       link: '/services/furniture-moving'
     }
