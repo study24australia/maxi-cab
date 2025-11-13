@@ -30,7 +30,7 @@ const Home: React.FC<HomeProps> = ({ onBookNow }) => {
     {
       title: 'Airport Transfers',
       description: 'Reliable maxi taxi to airport and wheelchair taxi Melbourne airport transfers. On-time pickups, smooth drop-offs, and stress-free travel.',
-      image: '/taxi.jpg',
+      image: '/wheel_chair_taxi.jpg',
       link: '/services/vip-transfer'
     },
     {
