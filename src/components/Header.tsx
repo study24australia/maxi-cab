@@ -34,16 +34,24 @@ const Header: React.FC<HeaderProps> = ({ onBookNow }) => {
       {/* Top Phone Bar */}
       <div className="bg-black text-white py-2">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-center space-x-2">
-            <Phone className="h-4 w-4 text-orange-500" />
-            <span className="text-sm font-medium">Call Now:</span>
-            <a 
-              href="tel:0435223547" 
-              className="text-orange-500 hover:text-orange-400 font-bold text-sm transition-colors"
+          <div className="flex items-center justify-center space-x-4">
+            <div className="flex items-center space-x-2">
+              <Phone className="h-4 w-4 text-orange-500" />
+              <span className="text-sm font-medium">Call Now:</span>
+              <a
+                href="tel:0435223547"
+                className="text-orange-500 hover:text-orange-400 font-bold text-sm transition-colors"
+              >
+                0435223547
+              </a>
+              <span className="text-gray-400 text-sm hidden sm:inline">- Available 24/7</span>
+            </div>
+            <button
+              onClick={onBookNow}
+              className="bg-orange-500 hover:bg-orange-600 text-white px-4 py-1.5 rounded-lg font-medium text-sm transition-colors"
             >
-              0435223547
-            </a>
-            <span className="text-gray-400 text-sm hidden sm:inline">- Available 24/7</span>
+              Book Now
+            </button>
           </div>
         </div>
       </div>
@@ -125,21 +133,14 @@ const Header: React.FC<HeaderProps> = ({ onBookNow }) => {
               )}
             </div>
 
-            <Link 
-              to="/contact" 
+            <Link
+              to="/contact"
               className={`font-medium transition-colors ${
                 isActive('/contact') ? 'text-black' : 'text-gray-800 hover:text-black'
               }`}
             >
               Contact Us
             </Link>
-            
-            <button
-              onClick={onBookNow}
-              className="bg-black text-white px-6 py-2 rounded-lg font-medium hover:bg-gray-800 transition-colors"
-            >
-              Book Now
-            </button>
           </nav>
 
           {/* Mobile Menu Button */}
