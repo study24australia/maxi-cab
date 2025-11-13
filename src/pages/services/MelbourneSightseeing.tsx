@@ -19,12 +19,22 @@ const MelbourneSightseeing = () => {
   ];
 
   const tourFeatures = [
-    'Experienced local guides',
-    'Flexible itineraries',
-    'Comfortable touring vehicles',
-    'Photography stops included',
-    'Insider local knowledge',
-    'Group and private tours'
+    'Experienced local guides and professional drivers',
+    'Flexible itineraries to suit your interests',
+    'Comfortable, air-conditioned maxi taxis Melbourne',
+    'Photography stops at top landmarks',
+    'Group and private tour options',
+    'Wheelchair accessible maxi taxi for inclusive travel',
+    'Easy maxi taxi booking Melbourne available 24/7'
+  ];
+
+  const whyChoose = [
+    'Modern maxi cab Melbourne fleet with comfortable seating',
+    'Trained drivers who double as friendly local guides',
+    'Wheelchair accessible taxi Melbourne for passengers with mobility needs',
+    'Hassle-free maxi taxi hire for families and tourists',
+    'On-time pickup and flexible routes',
+    'Ideal for airport-to-city and return sightseeing tours'
   ];
 
   return (
@@ -46,9 +56,15 @@ const MelbourneSightseeing = () => {
             <div>
               <h1 className="text-5xl font-bold mb-6">Melbourne Sightseeing Tours</h1>
               <p className="text-xl leading-relaxed mb-8">
-                Discover Melbourne's best attractions with our guided sightseeing tours. Let us show you the city like a local with insider knowledge and comfort.
+                Discover the beauty of Melbourne with Wheelchair Ride's Melbourne sightseeing tours, designed for comfort, convenience, and unforgettable experiences. Explore the city's iconic landmarks, hidden gems, and vibrant streets with the help of our knowledgeable local drivers and our modern maxi cab Melbourne and wheelchair accessible taxi Melbourne fleet.
               </p>
-              <button 
+              <p className="text-lg leading-relaxed mb-8">
+                Whether you're traveling solo, as a couple, or in a group, we make sure your Melbourne adventure is smooth, safe, and stylish.
+              </p>
+              <p className="text-lg font-semibold mb-8">
+                Book Sightseeing Tour Now — enjoy Melbourne like a local.
+              </p>
+              <button
                 onClick={() => setIsBookingModalOpen(true)}
                 className="bg-black text-white px-8 py-4 rounded-lg font-semibold hover:bg-gray-800 transition-colors duration-200"
               >
@@ -71,12 +87,12 @@ const MelbourneSightseeing = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">Popular Melbourne Attractions</h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
-              Explore Melbourne's most iconic landmarks and hidden gems with our knowledgeable local drivers.
+            <p className="text-gray-600 max-w-3xl mx-auto">
+              Explore the city's top attractions with our maxi taxi Melbourne sightseeing service. Our experienced drivers and guides will take you through Melbourne's most scenic routes and cultural landmarks, including:
             </p>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
             {attractions.map((attraction, index) => (
               <div key={index} className="bg-gray-50 p-4 rounded-lg text-center hover:bg-orange-50 hover:text-orange-600 transition-colors duration-200">
                 <span className="font-medium text-gray-800">{attraction}</span>
@@ -84,13 +100,18 @@ const MelbourneSightseeing = () => {
             ))}
           </div>
 
+          <p className="text-gray-600 text-center max-w-3xl mx-auto mb-12">
+            Our maxi taxi hire options are perfect for families, tourists, and groups who want to see it all in comfort and style.
+          </p>
+
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="text-center p-6 bg-gray-50 rounded-xl">
               <div className="inline-flex items-center justify-center w-16 h-16 bg-blue-100 text-blue-600 rounded-full mb-4">
                 <Camera className="h-8 w-8" />
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-3">Photo Opportunities</h3>
-              <p className="text-gray-600">Perfect stops for capturing memories at Melbourne's most photogenic locations.</p>
+              <p className="text-gray-600">Capture unforgettable memories at Melbourne's most photogenic locations. Our large taxi and 12 seater maxi taxi services are ideal for group photography tours, offering plenty of space for passengers and equipment.</p>
+              <p className="text-gray-600 mt-3">Whether you're looking for a quick maxi taxi near me or a full-day sightseeing journey, Wheelchair Ride ensures every stop is picture-perfect.</p>
             </div>
 
             <div className="text-center p-6 bg-gray-50 rounded-xl">
@@ -98,7 +119,8 @@ const MelbourneSightseeing = () => {
                 <MapPin className="h-8 w-8" />
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-3">Local Expertise</h3>
-              <p className="text-gray-600">Our drivers know Melbourne inside out and share fascinating local stories.</p>
+              <p className="text-gray-600">Our professional drivers know Melbourne like no one else — from hidden cafes to the city's most scenic drives. With our book maxi taxi option, you can create a custom sightseeing itinerary that matches your interests, timing, and comfort level.</p>
+              <p className="text-gray-600 mt-3">Planning to visit from the airport? Choose our maxi taxi Melbourne airport service to start your sightseeing tour as soon as you land.</p>
             </div>
 
             <div className="text-center p-6 bg-gray-50 rounded-xl">
@@ -106,7 +128,7 @@ const MelbourneSightseeing = () => {
                 <Clock className="h-8 w-8" />
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-3">Flexible Timing</h3>
-              <p className="text-gray-600">Tours can be customized to your schedule and preferred pace of exploration.</p>
+              <p className="text-gray-600">Your comfort and convenience come first. Whether you prefer a half-day trip or a full-day guided tour, our maxi cab Melbourne and wheelchair taxi options can be tailored to your schedule. We also offer wheelchair accessible taxis so everyone can experience Melbourne's charm without limitations.</p>
             </div>
           </div>
         </div>
@@ -115,13 +137,25 @@ const MelbourneSightseeing = () => {
       {/* Tour Features */}
       <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-white p-8 rounded-2xl shadow-lg">
+          <div className="bg-white p-8 rounded-2xl shadow-lg mb-8">
             <h3 className="text-2xl font-bold text-gray-900 mb-6">Tour Features</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {tourFeatures.map((feature, index) => (
                 <div key={index} className="flex items-center space-x-3">
                   <div className="w-2 h-2 bg-orange-500 rounded-full"></div>
                   <span className="text-gray-600">{feature}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="bg-white p-8 rounded-2xl shadow-lg">
+            <h3 className="text-2xl font-bold text-gray-900 mb-6">Why Choose Wheelchair Ride for Melbourne Sightseeing?</h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {whyChoose.map((reason, index) => (
+                <div key={index} className="flex items-center space-x-3">
+                  <div className="w-2 h-2 bg-orange-500 rounded-full"></div>
+                  <span className="text-gray-600">{reason}</span>
                 </div>
               ))}
             </div>
