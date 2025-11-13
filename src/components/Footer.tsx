@@ -97,14 +97,14 @@ const Footer: React.FC<FooterProps> = ({ onBookNow }) => {
           <div>
             <h3 className="text-lg font-semibold mb-4">Contact Info</h3>
             <div className="space-y-3">
-              <div className="flex items-center space-x-2">
+              <a href="tel:0435223547" className="flex items-center space-x-2 hover:text-orange-400 transition-colors cursor-pointer">
                 <Phone className="h-4 w-4 text-orange-500" />
                 <span className="text-gray-300">0435223547</span>
-              </div>
-              <div className="flex items-center space-x-2">
+              </a>
+              <a href="mailto:whelchair.booking25@gmail.com" className="flex items-center space-x-2 hover:text-orange-400 transition-colors cursor-pointer">
                 <Mail className="h-4 w-4 text-orange-500" />
                 <span className="text-gray-300">whelchair.booking25@gmail.com</span>
-              </div>
+              </a>
               <div className="flex items-center space-x-2">
                 <MapPin className="h-4 w-4 text-orange-500" />
                 <span className="text-gray-300">Melbourne, VIC Australia</span>
