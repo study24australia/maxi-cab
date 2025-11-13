@@ -26,13 +26,13 @@ const Footer: React.FC<FooterProps> = ({ onBookNow }) => {
               Professional, reliable, and safe taxi services across Melbourne and nearby areas.
             </p>
             <div className="flex space-x-3">
-           
-              <div className="bg-green-500 text-white p-2 rounded-full">
+
+              <a href="tel:0435223547" className="bg-green-500 text-white p-2 rounded-full hover:bg-green-600 transition-colors cursor-pointer">
                 <Phone className="h-4 w-4" />
-              </div>
-              <div className="bg-orange-500 text-white p-2 rounded-full">
+              </a>
+              <a href="mailto:whelchair.booking25@gmail.com" className="bg-orange-500 text-white p-2 rounded-full hover:bg-orange-600 transition-colors cursor-pointer">
                 <Mail className="h-4 w-4" />
-              </div>
+              </a>
             </div>
           </div>
 
