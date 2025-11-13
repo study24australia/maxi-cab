@@ -91,10 +91,10 @@ const Home: React.FC<HomeProps> = ({ onBookNow }) => {
 
   return (
     <div className="min-h-screen">
-      <SEO 
-        title="Wheelchair Ride - Wheelchair Accessible Taxi & Maxi Cab Services"
-        description="Professional wheelchair accessible taxi and maxi cab services in Melbourne. 24/7 NDIS transport, baby seat transfers, VIP services. Book online or call 0435223547."
-        keywords="wheelchair taxi Melbourne, accessible transport, NDIS taxi, maxi cab, baby seat taxi, Melbourne taxi service, disability transport, wheelchair accessible vehicle"
+      <SEO
+        title="Maxi Taxi Melbourne | Wheelchair Taxi | Airport Transfers | Book Now"
+        description="Book maxi taxi Melbourne, wheelchair accessible taxis, and airport transfers. 12-seater maxi taxi hire, large taxis, and maxi cab services available 24/7. Call 0435223547."
+        keywords="maxi taxi Melbourne, wheelchair taxi Melbourne, maxi cab Melbourne, maxi taxi near me, maxi taxi booking Melbourne, 12 seater maxi taxi, large taxi, wheelchair accessible taxi Melbourne, maxi taxi hire, maxi taxi Melbourne airport"
         url="https://wheelchairide.taxi/"
       />
       {/* Hero Section */}
