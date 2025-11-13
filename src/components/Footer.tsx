@@ -30,7 +30,7 @@ const Footer: React.FC<FooterProps> = ({ onBookNow }) => {
               <a href="tel:0435223547" className="bg-green-500 text-white p-2 rounded-full hover:bg-green-600 transition-colors cursor-pointer">
                 <Phone className="h-4 w-4" />
               </a>
-              <a href="mailto:whelchair.booking25@gmail.com" className="bg-orange-500 text-white p-2 rounded-full hover:bg-orange-600 transition-colors cursor-pointer">
+              <a href="mailto:wheelchairmaxi86@gmail.com" className="bg-orange-500 text-white p-2 rounded-full hover:bg-orange-600 transition-colors cursor-pointer">
                 <Mail className="h-4 w-4" />
               </a>
             </div>
@@ -101,9 +101,9 @@ const Footer: React.FC<FooterProps> = ({ onBookNow }) => {
                 <Phone className="h-4 w-4 text-orange-500" />
                 <span className="text-gray-300">0435223547</span>
               </a>
-              <a href="mailto:whelchair.booking25@gmail.com" className="flex items-center space-x-2 hover:text-orange-400 transition-colors cursor-pointer">
+              <a href="mailto:wheelchairmaxi86@gmail.com" className="flex items-center space-x-2 hover:text-orange-400 transition-colors cursor-pointer">
                 <Mail className="h-4 w-4 text-orange-500" />
-                <span className="text-gray-300">whelchair.booking25@gmail.com</span>
+                <span className="text-gray-300">wheelchairmaxi86@gmail.com</span>
               </a>
               <div className="flex items-center space-x-2">
                 <MapPin className="h-4 w-4 text-orange-500" />
