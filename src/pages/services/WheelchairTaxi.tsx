@@ -9,12 +9,21 @@ const WheelchairTaxi = () => {
   const [isBookingModalOpen, setIsBookingModalOpen] = useState(false);
 
   const features = [
-    'Fully wheelchair accessible vehicles',
-    'Trained assistance from our drivers',
+    'Fully wheelchair accessible taxis Melbourne',
     'Secure wheelchair restraint systems',
-    'Dignity and comfort guaranteed',
-    'Medical appointment specialists',
-    'Hospital transfer expertise'
+    'Trained, compassionate drivers',
+    'Wheelchair maxi taxi and maxi cab Melbourne options',
+    'Expertise in medical and hospital transfers',
+    'Comfortable maxi taxi Melbourne airport rides',
+    '24/7 availability with easy maxi taxi booking Melbourne',
+    'Affordable pricing and wheel chair hire Melbourne solutions'
+  ];
+
+  const benefits = [
+    'Dignity, safety, and comfort guaranteed',
+    'Suitable for NDIS participants and senior citizens',
+    'Group-friendly large taxi and 12-seater maxi taxi options',
+    'Flexible schedules for medical, social, or personal trips'
   ];
 
   return (
@@ -41,11 +50,17 @@ const WheelchairTaxi = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h1 className="text-5xl font-bold mb-6">Wheelchair Accessible Taxi</h1>
+              <h1 className="text-5xl font-bold mb-6">Wheelchair Accessible Taxi in Melbourne</h1>
               <p className="text-xl leading-relaxed mb-8">
-                Dignified, safe, and comfortable transportation for passengers with mobility needs. We're committed to providing accessible transportation for everyone.
+                Experience dignified, safe, and comfortable transportation with our premium wheelchair accessible taxi Melbourne service. At Wheelchair Ride, we're dedicated to providing inclusive and reliable transport for passengers with mobility needs — ensuring every ride is smooth, secure, and stress-free.
               </p>
-              <button 
+              <p className="text-lg leading-relaxed mb-8">
+                Whether it's a hospital transfer, medical appointment, or airport ride, our fleet of wheelchair taxis and maxi cabs Melbourne guarantees comfort and care at every step.
+              </p>
+              <p className="text-lg font-semibold mb-8">
+                Book Accessible Taxi Now — travel with independence, safety, and comfort.
+              </p>
+              <button
                 onClick={() => setIsBookingModalOpen(true)}
                 className="bg-black text-white px-8 py-4 rounded-lg font-semibold hover:bg-gray-800 transition-colors duration-200"
               >
@@ -68,8 +83,11 @@ const WheelchairTaxi = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">Accessibility Features</h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
-              Our wheelchair accessible vehicles are equipped with the latest technology and safety features to ensure a comfortable and secure journey.
+            <p className="text-gray-600 max-w-3xl mx-auto">
+              Our wheelchair accessible maxi taxis are purpose-built with advanced safety technology and easy access ramps. Each vehicle offers plenty of space to accommodate all types of wheelchairs — electric or manual — and ensures smooth entry and exit.
+            </p>
+            <p className="text-gray-600 max-w-3xl mx-auto mt-4">
+              From maxi taxi Melbourne airport transfers to wheel chair hire Melbourne options, we provide flexible and affordable solutions to suit your needs.
             </p>
           </div>
 
@@ -79,7 +97,8 @@ const WheelchairTaxi = () => {
                 <Accessibility className="h-8 w-8" />
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-3">Full Accessibility</h3>
-              <p className="text-gray-600">Purpose-built vehicles with ramps and adequate space for wheelchairs.</p>
+              <p className="text-gray-600">Our fleet includes purpose-built vehicles with hydraulic ramps, ample interior space, and professional drivers trained to provide friendly, respectful assistance. Whether you need a wheelchair taxi near me or a maxi taxi hire for longer trips, we've got you covered.</p>
+              <p className="text-gray-600 mt-3">We also offer 12-seater maxi taxis and large taxis for families or caregivers traveling together — ensuring everyone arrives comfortably.</p>
             </div>
 
             <div className="text-center p-6 bg-gray-50 rounded-xl">
@@ -87,7 +106,7 @@ const WheelchairTaxi = () => {
                 <Shield className="h-8 w-8" />
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-3">Safety Systems</h3>
-              <p className="text-gray-600">Advanced wheelchair restraint systems and safety protocols.</p>
+              <p className="text-gray-600">We prioritize passenger safety with advanced wheelchair restraint systems, smooth ramps, and secure locking mechanisms. Our wheelchair maxi taxi and wheelchair taxi Melbourne airport vehicles are regularly inspected and maintained to the highest standards for safety and hygiene.</p>
             </div>
 
             <div className="text-center p-6 bg-gray-50 rounded-xl">
@@ -95,7 +114,8 @@ const WheelchairTaxi = () => {
                 <Heart className="h-8 w-8" />
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-3">Compassionate Care</h3>
-              <p className="text-gray-600">Drivers trained in disability awareness and assistance.</p>
+              <p className="text-gray-600">Every driver at Wheelchair Ride is professionally trained in disability awareness and assistance, ensuring a courteous and supportive experience. From book maxi taxi to specialized NDIS transport, we focus on making every trip a positive one.</p>
+              <p className="text-gray-600 mt-3">We understand the importance of reliable transport — whether it's for daily commutes, hospital transfers, or events.</p>
             </div>
           </div>
 
@@ -106,6 +126,18 @@ const WheelchairTaxi = () => {
                 <div key={index} className="flex items-center space-x-3">
                   <div className="w-2 h-2 bg-orange-500 rounded-full"></div>
                   <span className="text-gray-600">{feature}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="mt-12 bg-white p-8 rounded-2xl border border-gray-200">
+            <h3 className="text-2xl font-bold text-gray-900 mb-6">Service Benefits</h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {benefits.map((benefit, index) => (
+                <div key={index} className="flex items-center space-x-3">
+                  <div className="w-2 h-2 bg-orange-500 rounded-full"></div>
+                  <span className="text-gray-600">{benefit}</span>
                 </div>
               ))}
             </div>
