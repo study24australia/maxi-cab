@@ -43,7 +43,7 @@ export const sendBookingEmail = async (bookingData: BookingData): Promise<boolea
     booking_datetime: new Date().toLocaleString(),
     booking_reference: `MET-${Date.now()}`,
     company_phone: '0435223547',
-    company_email: 'aman24january@gmail.com'
+    company_email: 'wheelchairmaxi86@gmail.com'
   };
 
   try {
