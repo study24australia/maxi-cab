@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Car, Menu, X, ChevronDown, ArrowRight, Phone } from 'lucide-react';
 
@@ -10,6 +10,31 @@ const Header: React.FC<HeaderProps> = ({ onBookNow }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isServicesOpen, setIsServicesOpen] = useState(false);
   const location = useLocation();
+
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.innerHTML = `
+      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-NCT7VVJP');
+    `;
+    document.head.appendChild(script);
+
+    const noscript = document.createElement('noscript');
+    noscript.innerHTML = '<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NCT7VVJP" height="0" width="0" style="display:none;visibility:hidden"></iframe>';
+    document.body.insertBefore(noscript, document.body.firstChild);
+
+    return () => {
+      if (script.parentNode) {
+        script.parentNode.removeChild(script);
+      }
+      if (noscript.parentNode) {
+        noscript.parentNode.removeChild(noscript);
+      }
+    };
+  }, []);
 
   const services = [
     { name: 'Event Transfer', path: '/services/event-transfer' },
