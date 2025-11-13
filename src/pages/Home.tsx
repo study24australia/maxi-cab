@@ -109,11 +109,11 @@ const Home: React.FC<HomeProps> = ({ onBookNow }) => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Hero Content */}
             <div className="text-white">
-              <h1 className="text-5xl lg:text-6xl font-bold leading-tight mb-6">
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight mb-4 sm:mb-6">
                 Melbourne's Premier
                 <span className="block" style={{ color: '#ff6f22' }}>Maxi & Wheelchair Taxi Services</span>
               </h1>
-              <p className="text-xl text-gray-200 mb-8 leading-relaxed">
+              <p className="text-sm sm:text-base lg:text-lg xl:text-xl text-gray-200 mb-6 sm:mb-8 leading-relaxed">
                 Professional maxi cab Melbourne, wheelchair taxi, and airport transfer services for every need. Whether you're booking a maxi taxi in Melbourne for a group trip or need a wheelchair-accessible taxi, we provide reliable, safe, and comfortable transportation - 24/7.
               </p>
               <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
